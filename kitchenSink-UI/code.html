@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>JJB Housing Component Library</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#13ec5b",
+                        "background-light": "#f6f8f6",
+                        "background-dark": "#102216",
+                        "surface-light": "#ffffff",
+                        "surface-dark": "#1a2e22",
+                    },
+                    fontFamily: {
+                        "display": ["Inter", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "2xl": "1rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        /* Custom scrollbar for component containers */
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 8px;
+            height: 8px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background-color: #cbd5e1;
+            border-radius: 20px;
+        }
+        .dark .custom-scrollbar::-webkit-scrollbar-thumb {
+            background-color: #334155;
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 font-display antialiased transition-colors duration-200">
+<div class="min-h-screen flex flex-col">
+<!-- 01. Navigation -->
+<section class="border-b border-slate-200 dark:border-slate-800">
+<div class="px-4 py-2 bg-slate-100 dark:bg-slate-900 text-xs font-mono text-slate-500 uppercase tracking-widest mb-0">
+                01. Navigation
+            </div>
+<header class="flex items-center justify-between whitespace-nowrap bg-surface-light dark:bg-surface-dark px-10 py-4 shadow-sm relative z-50">
+<div class="flex items-center gap-4 text-slate-900 dark:text-white">
+<div class="size-8 rounded-full bg-primary flex items-center justify-center text-background-dark">
+<span class="material-symbols-outlined">home_work</span>
+</div>
+<h2 class="text-slate-900 dark:text-white text-xl font-bold leading-tight tracking-tight">JJB Housing</h2>
+</div>
+<div class="hidden md:flex flex-1 justify-end gap-8">
+<nav class="flex items-center gap-9">
+<a class="text-slate-700 dark:text-slate-200 hover:text-primary dark:hover:text-primary text-sm font-medium leading-normal transition-colors" href="#">Properties</a>
+<a class="text-slate-700 dark:text-slate-200 hover:text-primary dark:hover:text-primary text-sm font-medium leading-normal transition-colors" href="#">Locations</a>
+<a class="text-slate-700 dark:text-slate-200 hover:text-primary dark:hover:text-primary text-sm font-medium leading-normal transition-colors" href="#">About Us</a>
+<a class="text-slate-700 dark:text-slate-200 hover:text-primary dark:hover:text-primary text-sm font-medium leading-normal transition-colors" href="#">Agents</a>
+</nav>
+<button class="flex min-w-[84px] cursor-pointer items-center justify-center overflow-hidden rounded-lg h-10 px-6 bg-primary text-background-dark text-sm font-bold leading-normal tracking-wide hover:bg-primary/90 transition-all shadow-lg shadow-primary/20">
+<span>Contact Us</span>
+</button>
+</div>
+<button class="md:hidden text-slate-900 dark:text-white">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</header>
+</section>
+<div class="flex-1 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 space-y-20">
+<!-- 02. Hero Section -->
+<section>
+<div class="border-b border-dashed border-slate-300 dark:border-slate-700 pb-4 mb-8">
+<h2 class="text-2xl font-bold text-slate-900 dark:text-white">02. Hero Section</h2>
+<p class="text-slate-500 dark:text-slate-400 mt-1">Primary conversion area with lead generation form.</p>
+</div>
+<div class="relative bg-surface-light dark:bg-surface-dark rounded-3xl overflow-hidden shadow-xl border border-slate-100 dark:border-slate-800">
+<div class="flex flex-col lg:flex-row">
+<!-- Content -->
+<div class="flex-1 p-8 lg:p-12 flex flex-col justify-center gap-8">
+<div class="space-y-4">
+<span class="inline-block px-3 py-1 rounded-full bg-primary/20 text-green-700 dark:text-primary text-xs font-bold uppercase tracking-wider">
+                                    New Development
+                                </span>
+<h1 class="text-4xl lg:text-5xl font-black text-slate-900 dark:text-white leading-tight">
+                                    Find Your Dream Home in <span class="text-primary underline decoration-4 decoration-primary/30 underline-offset-4">La Aldea</span>
+</h1>
+<p class="text-slate-600 dark:text-slate-300 text-lg leading-relaxed max-w-lg">
+                                    Experience modern living in the heart of San Fernando, Pampanga. Secure, accessible, and flood-free community starting at ₱2.5M.
+                                </p>
+</div>
+<!-- Search Bar Component -->
+<div class="bg-slate-50 dark:bg-slate-800/50 p-2 rounded-xl border border-slate-200 dark:border-slate-700 flex flex-col sm:flex-row gap-2 max-w-xl shadow-sm">
+<div class="flex-1 flex items-center px-4 h-12">
+<span class="material-symbols-outlined text-slate-400 mr-3">search</span>
+<input class="bg-transparent border-none w-full text-slate-900 dark:text-white placeholder-slate-400 focus:ring-0 px-0" placeholder="Search by location or project..." type="text"/>
+</div>
+<button class="bg-primary hover:bg-green-400 text-background-dark font-bold px-6 py-3 rounded-lg transition-colors flex items-center justify-center gap-2 whitespace-nowrap">
+<span>Search</span>
+<span class="material-symbols-outlined text-sm">arrow_forward</span>
+</button>
+</div>
+<div class="flex items-center gap-4 text-sm text-slate-500 dark:text-slate-400">
+<div class="flex -space-x-2 overflow-hidden">
+<img alt="Agent Avatar 1" class="inline-block h-8 w-8 rounded-full ring-2 ring-white dark:ring-slate-800 object-cover" data-alt="Portrait of a female real estate agent" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCjV0ZBthzhwqxbT4D-KJgYZ4P359Z30CrT7HiMKG_M9EwWYLedjzO9AOnXeyCla4V9I66Hv0f3PCFAfCKGeAP75octTNAULSNUwr71gQLHwOLy0MND1TRbWKcl_sWC4Sfpr25ye-rla8LsnkQ5wg7Buebib9mXwnSYyGv2fCJTeBNBMKy0KgUarYZ9HiLoXyJyRFK_GwD9DPHM2MWluG6aseLgQ8-U9YMRo_BRgkg40IUdt7BwIolq0hLLoOG5RRn0TLdHEunpcZ8"/>
+<img alt="Agent Avatar 2" class="inline-block h-8 w-8 rounded-full ring-2 ring-white dark:ring-slate-800 object-cover" data-alt="Portrait of a male real estate agent" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCKQADD2M_iW4NH4bfCL3lVL9jhvFbNC9M4jkd9y2qQOwVRSpcIciVu4Un93yv0DRJJGm-HoA9zrRfUTew_IolVnSsoYDG2PV_3QSEs9h4yMP3ukRi1t8yZXmaOnja0rA8aLTkRHS8HmB0zFYZu2DOHNQJws8ZiM3ACC4B70h8SSIo7eRatSyG0Bf__1AmsRCh48yykxwDQ88GEtyx4mt9yrDJGbauYo427gGxZWUG4h528NAgDA-GdfHkFKVLI5sQYL7yqNaYQpps"/>
+<img alt="Agent Avatar 3" class="inline-block h-8 w-8 rounded-full ring-2 ring-white dark:ring-slate-800 object-cover" data-alt="Portrait of another male real estate agent" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDV8O4xwoW5uGo4hoOueVQI7DF5FSiZ1PqTZyv2gK04ONJfFBA7FWcdbpCEKwcHjLE1KPaG8C0P1xRrOEN_4Km5R2YCSB85RpaT-3mcs4XxxDpO4Xn65xSE7FeNEsUlXVrplNTKA_QSReyaBvi4x8Av5wHXuJ9cmU27q7rgsquGjDuBythAdmACm03cm4TymnW9SK_jt_RcnQQju-pj00ftcpXO1x9-3gU2tKjc7hlZDjv1DB9b9eVRucHZjnXLG7jhgFDAP-TolwI"/>
+</div>
+<p>Trusted by <span class="font-bold text-slate-900 dark:text-white">500+ families</span></p>
+</div>
+</div>
+<!-- Image -->
+<div class="lg:w-1/2 relative min-h-[400px]">
+<img alt="Modern house exterior" class="absolute inset-0 w-full h-full object-cover" data-alt="Modern two-story house with large windows and a garden" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBrS25w3g2IbB3TzmZOz6nAXSld8lfSvlLxBs6a362v6ltdqRlc77zdCva-j_fhwPpAUnMffFXxtRFKJr88C5x0zKKW7WuJUZbCXK73B6tagqz3n17kHk4nxkye0wwBC3QBlLjF4UD2S4KSh6F0wjtYx8DHGiqKr9czHBx2SYkC8-0P-me4DiRFlbtowkgAfV0LUew7yznagRnPt2vzhwTkahLrsv05FdoUTLBtl-qKpGYxP9JnLZyfWDohCIavKln1ma0lxDnHKkg"/>
+<div class="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent lg:bg-gradient-to-l lg:from-transparent lg:to-surface-light dark:lg:to-surface-dark opacity-50 lg:opacity-100"></div>
+</div>
+</div>
+</div>
+</section>
+<!-- 03. Typography & Colors -->
+<section class="grid md:grid-cols-2 gap-12">
+<div>
+<div class="border-b border-dashed border-slate-300 dark:border-slate-700 pb-4 mb-8">
+<h2 class="text-2xl font-bold text-slate-900 dark:text-white">03. Typography</h2>
+<p class="text-slate-500 dark:text-slate-400 mt-1">Inter font family hierarchy.</p>
+</div>
+<div class="space-y-6 bg-surface-light dark:bg-surface-dark p-8 rounded-xl border border-slate-200 dark:border-slate-800">
+<div>
+<span class="text-xs text-slate-400 uppercase font-mono mb-2 block">Display H1</span>
+<h1 class="text-4xl font-black text-slate-900 dark:text-white leading-tight">Modern Living Redefined</h1>
+</div>
+<div>
+<span class="text-xs text-slate-400 uppercase font-mono mb-2 block">Heading H2</span>
+<h2 class="text-2xl font-bold text-slate-900 dark:text-white">La Aldea Fernandina II</h2>
+</div>
+<div>
+<span class="text-xs text-slate-400 uppercase font-mono mb-2 block">Heading H3</span>
+<h3 class="text-xl font-semibold text-slate-900 dark:text-white">Property Features</h3>
+</div>
+<div>
+<span class="text-xs text-slate-400 uppercase font-mono mb-2 block">Body Text</span>
+<p class="text-base text-slate-600 dark:text-slate-300 leading-relaxed">
+                                Located in the heart of Pampanga, this development offers accessible luxury. 
+                                Our units are designed with maximizing space and comfort in mind for the modern Filipino family.
+                            </p>
+</div>
+<div>
+<span class="text-xs text-slate-400 uppercase font-mono mb-2 block">Caption &amp; Small</span>
+<p class="text-sm text-slate-500 dark:text-slate-400">
+                                *Prices subject to change without prior notice.
+                            </p>
+</div>
+</div>
+</div>
+<div>
+<div class="border-b border-dashed border-slate-300 dark:border-slate-700 pb-4 mb-8">
+<h2 class="text-2xl font-bold text-slate-900 dark:text-white">04. Colors</h2>
+<p class="text-slate-500 dark:text-slate-400 mt-1">Brand palette and neutrals.</p>
+</div>
+<div class="grid grid-cols-2 gap-4">
+<div class="space-y-3">
+<div class="h-24 w-full bg-primary rounded-lg shadow-sm flex items-end p-3">
+<span class="text-background-dark font-bold text-sm bg-white/30 backdrop-blur-sm px-2 py-1 rounded">Primary #13ec5b</span>
+</div>
+<div class="h-16 w-full bg-primary/20 rounded-lg flex items-end p-3 border border-primary/20">
+<span class="text-slate-900 dark:text-white font-mono text-xs">Primary 20%</span>
+</div>
+</div>
+<div class="space-y-3">
+<div class="h-24 w-full bg-background-dark rounded-lg shadow-sm flex items-end p-3">
+<span class="text-white font-bold text-sm bg-black/30 backdrop-blur-sm px-2 py-1 rounded">Dark #102216</span>
+</div>
+<div class="h-16 w-full bg-slate-100 dark:bg-slate-800 rounded-lg flex items-end p-3 border border-slate-200 dark:border-slate-700">
+<span class="text-slate-500 dark:text-slate-300 font-mono text-xs">Neutral Surface</span>
+</div>
+</div>
+<!-- Status Colors -->
+<div class="col-span-2 grid grid-cols-4 gap-4 mt-2">
+<div class="h-12 w-full bg-blue-500 rounded-lg flex items-center justify-center text-white text-xs font-bold">Info</div>
+<div class="h-12 w-full bg-green-500 rounded-lg flex items-center justify-center text-white text-xs font-bold">Success</div>
+<div class="h-12 w-full bg-yellow-500 rounded-lg flex items-center justify-center text-white text-xs font-bold">Warning</div>
+<div class="h-12 w-full bg-red-500 rounded-lg flex items-center justify-center text-white text-xs font-bold">Error</div>
+</div>
+</div>
+</div>
+</section>
+<!-- 05. Cards -->
+<section>
+<div class="border-b border-dashed border-slate-300 dark:border-slate-700 pb-4 mb-8">
+<h2 class="text-2xl font-bold text-slate-900 dark:text-white">05. Cards</h2>
+<p class="text-slate-500 dark:text-slate-400 mt-1">Property listings and feature cards.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+<!-- Property Card 1 (Available) -->
+<div class="group bg-surface-light dark:bg-surface-dark rounded-xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 border border-slate-200 dark:border-slate-800 flex flex-col">
+<div class="relative aspect-[4/3] overflow-hidden">
+<span class="absolute top-4 left-4 bg-primary text-background-dark text-xs font-bold px-3 py-1.5 rounded z-10 shadow-lg">
+                                Available
+                            </span>
+<button class="absolute top-4 right-4 bg-black/40 hover:bg-black/60 text-white rounded-full p-2 z-10 transition-colors backdrop-blur-sm">
+<span class="material-symbols-outlined text-[20px]">favorite</span>
+</button>
+<img alt="House exterior with lawn" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Modern suburban house with a green lawn and driveway" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA4unqtdOU9MfiwQS7NU5yuMIRSAMhycKe9BPNNR-jLn0sETfVIzL2gzUlbSV3m1t1Kp3gbaBwaZWjAj8eNeHXILLkUGDdilyVA-LPUu1KbqMOlnp506liu0U9tyjvro-NS_HC-MPCWrJiwGhr_MpIEeH-xBkkT1GKlWSECGhrj7iSSYssnLGgwWuSz_p3kdRnPET8rG2mzoht55SzCTb-aeNCXId8u7S5tLIkNS9SLb-ZPCEEyTgLthRVQ6ufCC4tyA_dYC2SoiKk"/>
+<div class="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black/80 to-transparent">
+<p class="text-white font-bold text-xl">₱ 3,250,000</p>
+</div>
+</div>
+<div class="p-5 flex-1 flex flex-col">
+<div class="flex-1">
+<h3 class="font-bold text-lg text-slate-900 dark:text-white mb-1">Modern Loft - Model A</h3>
+<p class="text-slate-500 dark:text-slate-400 text-sm flex items-center gap-1 mb-4">
+<span class="material-symbols-outlined text-[16px]">location_on</span>
+                                    San Fernando, Pampanga
+                                </p>
+</div>
+<div class="flex items-center justify-between py-4 border-t border-slate-100 dark:border-slate-700 mb-4">
+<div class="flex items-center gap-2 text-slate-600 dark:text-slate-300 text-sm font-medium">
+<span class="material-symbols-outlined text-[20px] text-primary">bed</span>
+                                    3 Beds
+                                </div>
+<div class="w-px h-8 bg-slate-200 dark:bg-slate-700"></div>
+<div class="flex items-center gap-2 text-slate-600 dark:text-slate-300 text-sm font-medium">
+<span class="material-symbols-outlined text-[20px] text-primary">bathtub</span>
+                                    2 Baths
+                                </div>
+<div class="w-px h-8 bg-slate-200 dark:bg-slate-700"></div>
+<div class="flex items-center gap-2 text-slate-600 dark:text-slate-300 text-sm font-medium">
+<span class="material-symbols-outlined text-[20px] text-primary">square_foot</span>
+                                    80 sqm
+                                </div>
+</div>
+<button class="w-full py-2.5 rounded-lg border border-slate-300 dark:border-slate-600 text-slate-700 dark:text-slate-200 font-semibold hover:border-primary hover:text-primary dark:hover:border-primary dark:hover:text-primary transition-colors text-sm">
+                                View Details
+                            </button>
+</div>
+</div>
+<!-- Property Card 2 (Sold Out) -->
+<div class="group bg-surface-light dark:bg-surface-dark rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-all duration-300 border border-slate-200 dark:border-slate-800 flex flex-col opacity-80">
+<div class="relative aspect-[4/3] overflow-hidden grayscale">
+<span class="absolute top-4 left-4 bg-slate-600 text-white text-xs font-bold px-3 py-1.5 rounded z-10 shadow-lg">
+                                Sold Out
+                            </span>
+<img alt="Apartment building exterior" class="w-full h-full object-cover" data-alt="Small modern apartment complex with balconies" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCfPxH-EtYWZZOXQv7W6APiLOy6pzMA_vP1V3og8fBWuYqkFoKlvEXpSef8CNvnFThmOGWPlCF0bNqWyB0fTXIkBFaFMtmFJYugfqGfrvU0HEkMx7da59pNwwy5kxKyfMh0y6Fc6M4x3pAjnjnfDTNKfdbkgvtX5hs_PWEXbatN3n9CJ9qgV7_wLUpEd0P3p1OtHMnUBu37D0Jnkzs7TNyL56urguvN4zPer9fdqduIUmxekB4pe_va_BSQzKbIW8IENGcJ0y1Vedk"/>
+</div>
+<div class="p-5 flex-1 flex flex-col">
+<h3 class="font-bold text-lg text-slate-900 dark:text-white mb-1">Townhouse - Model B</h3>
+<p class="text-slate-500 dark:text-slate-400 text-sm flex items-center gap-1 mb-4">
+<span class="material-symbols-outlined text-[16px]">location_on</span>
+                                Angeles City, Pampanga
+                            </p>
+<div class="flex items-center justify-between py-4 border-t border-slate-100 dark:border-slate-700">
+<div class="flex items-center gap-2 text-slate-600 dark:text-slate-300 text-xs">
+<span class="material-symbols-outlined text-[18px]">bed</span> 2 Beds
+                                </div>
+<div class="flex items-center gap-2 text-slate-600 dark:text-slate-300 text-xs">
+<span class="material-symbols-outlined text-[18px]">bathtub</span> 1 Bath
+                                </div>
+<div class="flex items-center gap-2 text-slate-600 dark:text-slate-300 text-xs">
+<span class="material-symbols-outlined text-[18px]">square_foot</span> 45 sqm
+                                </div>
+</div>
+</div>
+</div>
+<!-- Testimonial Card -->
+<div class="bg-primary/5 dark:bg-primary/10 rounded-xl p-8 border border-primary/20 flex flex-col justify-center relative">
+<span class="material-symbols-outlined text-6xl text-primary/20 absolute top-4 right-4">format_quote</span>
+<div class="flex items-center gap-4 mb-6 relative z-10">
+<img alt="Customer avatar" class="w-12 h-12 rounded-full object-cover ring-2 ring-primary" data-alt="Smiling woman portrait" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB-WkgfogWV7Dz-vuGVB8TdE4OA96wUYctorHUCNktG9P6xo3mKBLjXhXIDA7G9UittEthdJpzMLtaUaZPn1GdOfw3TzsC3Y202XYXl6dbLwxX2kt3RZOK7i3KPSiqxCKBZpDqp1j31ArvMNdbozlFE7NWH2tcCqlFXzBptig-s2O28TfG1Xs8K4-wjDvlBjzZBeD4lHOabDzL0f34wxl7r7eF2RGWcdeUGRUfeLb6EM5gnFXyx1H0WDu_ysv6uxHVKNqxSpWa38WQ"/>
+<div>
+<h4 class="font-bold text-slate-900 dark:text-white text-sm">Maria Santos</h4>
+<div class="flex text-yellow-400 text-xs">
+<span class="material-symbols-outlined text-[16px] fill-current">star</span>
+<span class="material-symbols-outlined text-[16px] fill-current">star</span>
+<span class="material-symbols-outlined text-[16px] fill-current">star</span>
+<span class="material-symbols-outlined text-[16px] fill-current">star</span>
+<span class="material-symbols-outlined text-[16px] fill-current">star</span>
+</div>
+</div>
+</div>
+<p class="text-slate-700 dark:text-slate-200 italic text-sm leading-relaxed relative z-10">
+                            "Finding a home with JJB was seamless. The agents were incredibly helpful and the La Aldea community is perfect for my family."
+                        </p>
+</div>
+</div>
+</section>
+<!-- 06. Form Elements & Auth -->
+<section class="grid lg:grid-cols-2 gap-12 items-start">
+<!-- Inputs -->
+<div class="space-y-8">
+<div class="border-b border-dashed border-slate-300 dark:border-slate-700 pb-4">
+<h2 class="text-2xl font-bold text-slate-900 dark:text-white">06. Inputs</h2>
+<p class="text-slate-500 dark:text-slate-400 mt-1">Fields, selectors, and sliders.</p>
+</div>
+<div class="bg-surface-light dark:bg-surface-dark p-6 rounded-xl border border-slate-200 dark:border-slate-800 space-y-6">
+<!-- Text Input -->
+<div class="space-y-1">
+<label class="text-sm font-semibold text-slate-700 dark:text-slate-300">Email Address</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-2.5 text-slate-400">mail</span>
+<input class="w-full pl-10 pr-4 py-2 bg-slate-50 dark:bg-slate-800 border border-slate-300 dark:border-slate-700 rounded-lg text-slate-900 dark:text-white placeholder-slate-400 focus:ring-2 focus:ring-primary focus:border-transparent outline-none transition-all" placeholder="you@example.com" type="email"/>
+</div>
+</div>
+<!-- Select -->
+<div class="space-y-1">
+<label class="text-sm font-semibold text-slate-700 dark:text-slate-300">Preferred Location</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-2.5 text-slate-400">pin_drop</span>
+<select class="w-full pl-10 pr-10 py-2 bg-slate-50 dark:bg-slate-800 border border-slate-300 dark:border-slate-700 rounded-lg text-slate-900 dark:text-white focus:ring-2 focus:ring-primary focus:border-transparent outline-none appearance-none transition-all cursor-pointer">
+<option>San Fernando, Pampanga</option>
+<option>Angeles City</option>
+<option>Mabalacat</option>
+</select>
+<span class="material-symbols-outlined absolute right-3 top-2.5 text-slate-400 pointer-events-none">expand_more</span>
+</div>
+</div>
+<!-- Checkbox & Radio -->
+<div class="flex gap-8">
+<label class="flex items-center space-x-3 cursor-pointer group">
+<input class="form-checkbox h-5 w-5 text-primary rounded border-slate-300 dark:border-slate-600 dark:bg-slate-800 focus:ring-offset-0 focus:ring-primary/50 transition duration-150 ease-in-out" type="checkbox"/>
+<span class="text-sm text-slate-700 dark:text-slate-300 group-hover:text-primary transition-colors">Remember me</span>
+</label>
+<label class="flex items-center space-x-3 cursor-pointer group">
+<input checked="" class="form-radio h-5 w-5 text-primary border-slate-300 dark:border-slate-600 dark:bg-slate-800 focus:ring-offset-0 focus:ring-primary/50 transition duration-150 ease-in-out" name="prop_type" type="radio"/>
+<span class="text-sm text-slate-700 dark:text-slate-300 group-hover:text-primary transition-colors">Residential</span>
+</label>
+</div>
+<!-- Range Slider Concept -->
+<div class="space-y-3 pt-2">
+<div class="flex justify-between text-sm font-semibold text-slate-700 dark:text-slate-300">
+<span>Price Range</span>
+<span class="text-primary">₱1.5M - ₱5M</span>
+</div>
+<div class="relative h-2 bg-slate-200 dark:bg-slate-700 rounded-full">
+<div class="absolute h-full bg-primary rounded-full" style="width: 60%; left: 10%;"></div>
+<div class="absolute h-4 w-4 bg-white border-2 border-primary rounded-full shadow cursor-pointer top-1/2 -translate-y-1/2" style="left: 10%;"></div>
+<div class="absolute h-4 w-4 bg-white border-2 border-primary rounded-full shadow cursor-pointer top-1/2 -translate-y-1/2" style="left: 70%;"></div>
+</div>
+</div>
+</div>
+</div>
+<!-- Auth Forms -->
+<div>
+<div class="border-b border-dashed border-slate-300 dark:border-slate-700 pb-4 mb-8">
+<h2 class="text-2xl font-bold text-slate-900 dark:text-white">07. Auth Forms</h2>
+<p class="text-slate-500 dark:text-slate-400 mt-1">Minimalist login component.</p>
+</div>
+<div class="bg-surface-light dark:bg-surface-dark p-8 rounded-xl shadow-lg border-t-4 border-primary max-w-md mx-auto lg:mx-0">
+<h3 class="text-xl font-bold text-slate-900 dark:text-white mb-2">Welcome Back</h3>
+<p class="text-slate-500 dark:text-slate-400 text-sm mb-6">Log in to manage your viewing schedule.</p>
+<form class="space-y-4">
+<div>
+<label class="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-1">Email</label>
+<input class="w-full px-4 py-2 bg-slate-50 dark:bg-slate-800 border border-slate-300 dark:border-slate-700 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent outline-none" placeholder="name@company.com" type="email"/>
+</div>
+<div>
+<div class="flex justify-between mb-1">
+<label class="block text-sm font-medium text-slate-700 dark:text-slate-300">Password</label>
+<a class="text-xs font-medium text-primary hover:underline" href="#">Forgot?</a>
+</div>
+<input class="w-full px-4 py-2 bg-slate-50 dark:bg-slate-800 border border-slate-300 dark:border-slate-700 rounded-lg focus:ring-2 focus:ring-primary focus:border-transparent outline-none" type="password" value="password123"/>
+</div>
+<button class="w-full bg-slate-900 dark:bg-white text-white dark:text-background-dark font-bold py-2.5 rounded-lg hover:opacity-90 transition-opacity">
+                                Sign In
+                            </button>
+</form>
+<div class="mt-6 text-center text-sm text-slate-500 dark:text-slate-400">
+                            Don't have an account? <a class="font-bold text-slate-900 dark:text-white hover:text-primary transition-colors" href="#">Sign up</a>
+</div>
+</div>
+</div>
+</section>
+<!-- 08. Modals & Buttons -->
+<section class="grid lg:grid-cols-2 gap-12">
+<!-- Modal Visual -->
+<div>
+<div class="border-b border-dashed border-slate-300 dark:border-slate-700 pb-4 mb-8">
+<h2 class="text-2xl font-bold text-slate-900 dark:text-white">08. Modals</h2>
+<p class="text-slate-500 dark:text-slate-400 mt-1">Overlay component example.</p>
+</div>
+<div class="relative bg-slate-200 dark:bg-slate-800 rounded-xl overflow-hidden h-80 flex items-center justify-center p-4 border border-slate-300 dark:border-slate-700">
+<!-- Backdrop Simulation -->
+<div class="absolute inset-0 bg-slate-900/60 backdrop-blur-sm"></div>
+<!-- Modal Content -->
+<div class="relative bg-surface-light dark:bg-surface-dark rounded-xl shadow-2xl p-6 w-full max-w-sm">
+<div class="flex justify-between items-start mb-4">
+<div>
+<h3 class="text-lg font-bold text-slate-900 dark:text-white">Schedule Viewing</h3>
+<p class="text-xs text-slate-500">Pick a date to visit La Aldea.</p>
+</div>
+<button class="text-slate-400 hover:text-slate-600 dark:hover:text-slate-200">
+<span class="material-symbols-outlined">close</span>
+</button>
+</div>
+<div class="space-y-3 mb-6">
+<div class="bg-slate-50 dark:bg-slate-800 p-3 rounded border border-slate-200 dark:border-slate-700 flex items-center justify-between cursor-pointer hover:border-primary transition-colors">
+<div class="text-sm font-medium text-slate-700 dark:text-slate-200">Fri, Oct 24</div>
+<span class="material-symbols-outlined text-slate-400 text-sm">calendar_month</span>
+</div>
+<div class="grid grid-cols-2 gap-2">
+<button class="py-2 text-xs font-bold rounded bg-primary text-background-dark border border-primary">10:00 AM</button>
+<button class="py-2 text-xs font-bold rounded bg-transparent text-slate-600 dark:text-slate-300 border border-slate-300 dark:border-slate-600 hover:border-primary">02:00 PM</button>
+</div>
+</div>
+<button class="w-full bg-slate-900 dark:bg-white text-white dark:text-background-dark font-bold py-2 rounded-lg text-sm">Confirm Booking</button>
+</div>
+</div>
+</div>
+<!-- Buttons -->
+<div>
+<div class="border-b border-dashed border-slate-300 dark:border-slate-700 pb-4 mb-8">
+<h2 class="text-2xl font-bold text-slate-900 dark:text-white">09. Buttons</h2>
+<p class="text-slate-500 dark:text-slate-400 mt-1">Interactive states and styles.</p>
+</div>
+<div class="space-y-8 bg-surface-light dark:bg-surface-dark p-8 rounded-xl border border-slate-200 dark:border-slate-800">
+<!-- Primary -->
+<div class="flex flex-wrap items-center gap-4">
+<span class="w-24 text-xs font-mono text-slate-400">Primary</span>
+<button class="bg-primary hover:bg-green-400 text-background-dark font-bold py-2 px-6 rounded-lg transition-colors shadow-lg shadow-primary/20">
+                                Contact Us
+                            </button>
+<button class="bg-primary hover:bg-green-400 text-background-dark font-bold py-2 px-6 rounded-lg transition-colors opacity-50 cursor-not-allowed">
+                                Disabled
+                            </button>
+</div>
+<!-- Secondary -->
+<div class="flex flex-wrap items-center gap-4">
+<span class="w-24 text-xs font-mono text-slate-400">Secondary</span>
+<button class="bg-transparent border-2 border-slate-900 dark:border-white text-slate-900 dark:text-white hover:bg-slate-900 hover:text-white dark:hover:bg-white dark:hover:text-background-dark font-bold py-2 px-6 rounded-lg transition-colors">
+                                View Map
+                            </button>
+<button class="bg-transparent border-2 border-slate-300 text-slate-300 font-bold py-2 px-6 rounded-lg cursor-not-allowed">
+                                View Map
+                            </button>
+</div>
+<!-- Ghost -->
+<div class="flex flex-wrap items-center gap-4">
+<span class="w-24 text-xs font-mono text-slate-400">Ghost</span>
+<button class="text-slate-600 dark:text-slate-300 hover:text-primary dark:hover:text-primary font-bold py-2 px-6 rounded-lg transition-colors flex items-center gap-2">
+<span class="material-symbols-outlined text-sm">download</span>
+                                Download Brochure
+                            </button>
+</div>
+</div>
+</div>
+</section>
+</div>
+<!-- 10. Footer -->
+<section class="mt-20">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-4">
+<div class="px-4 py-2 bg-slate-100 dark:bg-slate-900 text-xs font-mono text-slate-500 uppercase tracking-widest inline-block rounded">
+                    10. Footer
+                </div>
+</div>
+<footer class="bg-surface-light dark:bg-surface-dark border-t border-slate-200 dark:border-slate-800 pt-16 pb-8">
+<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+<!-- Brand -->
+<div class="space-y-4">
+<div class="flex items-center gap-3 text-slate-900 dark:text-white mb-4">
+<div class="size-8 rounded-full bg-primary flex items-center justify-center text-background-dark">
+<span class="material-symbols-outlined">home_work</span>
+</div>
+<h2 class="text-xl font-bold">JJB Housing</h2>
+</div>
+<p class="text-slate-500 dark:text-slate-400 text-sm leading-relaxed">
+                                Creating communities that last. We build more than just houses; we build homes for the Filipino family.
+                            </p>
+<div class="flex gap-4">
+<a class="w-10 h-10 rounded-full bg-slate-100 dark:bg-slate-800 flex items-center justify-center text-slate-600 dark:text-slate-400 hover:bg-primary hover:text-background-dark transition-all" href="#">
+<!-- Using simple text for social icons as per prompt constraints regarding libraries, or SVG if needed, keeping it simple here -->
+<span class="font-bold">fb</span>
+</a>
+<a class="w-10 h-10 rounded-full bg-slate-100 dark:bg-slate-800 flex items-center justify-center text-slate-600 dark:text-slate-400 hover:bg-primary hover:text-background-dark transition-all" href="#">
+<span class="font-bold">ig</span>
+</a>
+<a class="w-10 h-10 rounded-full bg-slate-100 dark:bg-slate-800 flex items-center justify-center text-slate-600 dark:text-slate-400 hover:bg-primary hover:text-background-dark transition-all" href="#">
+<span class="font-bold">in</span>
+</a>
+</div>
+</div>
+<!-- Links -->
+<div>
+<h4 class="font-bold text-slate-900 dark:text-white mb-6">Quick Links</h4>
+<ul class="space-y-3 text-sm text-slate-600 dark:text-slate-400">
+<li><a class="hover:text-primary transition-colors" href="#">Properties</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">House Models</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Virtual Tour</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Locations</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Careers</a></li>
+</ul>
+</div>
+<!-- Contact -->
+<div>
+<h4 class="font-bold text-slate-900 dark:text-white mb-6">Contact Info</h4>
+<ul class="space-y-4 text-sm text-slate-600 dark:text-slate-400">
+<li class="flex items-start gap-3">
+<span class="material-symbols-outlined text-primary mt-0.5">location_on</span>
+<span>La Aldea Fernandina II,<br/>San Fernando, Pampanga</span>
+</li>
+<li class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary">phone</span>
+<span>+63 917 123 4567</span>
+</li>
+<li class="flex items-center gap-3">
+<span class="material-symbols-outlined text-primary">mail</span>
+<span>inquiries@jjbhousing.ph</span>
+</li>
+</ul>
+</div>
+<!-- Newsletter -->
+<div>
+<h4 class="font-bold text-slate-900 dark:text-white mb-6">Newsletter</h4>
+<p class="text-sm text-slate-500 dark:text-slate-400 mb-4">
+                                Subscribe to get the latest updates on new units and price drops.
+                            </p>
+<form class="flex flex-col gap-2">
+<input class="w-full px-4 py-2 bg-slate-50 dark:bg-slate-800 border border-slate-300 dark:border-slate-700 rounded-lg text-sm focus:ring-2 focus:ring-primary focus:border-transparent outline-none" placeholder="Your email address" type="email"/>
+<button class="w-full bg-slate-900 dark:bg-white text-white dark:text-background-dark font-bold py-2 rounded-lg text-sm hover:opacity-90 transition-opacity">
+                                    Subscribe
+                                </button>
+</form>
+</div>
+</div>
+<div class="border-t border-slate-200 dark:border-slate-800 pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-slate-500 dark:text-slate-500">
+<p>© 2023 JJB Housing. All rights reserved.</p>
+<div class="flex gap-6">
+<a class="hover:text-slate-800 dark:hover:text-slate-300" href="#">Privacy Policy</a>
+<a class="hover:text-slate-800 dark:hover:text-slate-300" href="#">Terms of Service</a>
+</div>
+</div>
+</div>
+</footer>
+</section>
+</div>
+<!-- Map component for location demo -->
+<div class="hidden">
+<img data-alt="Map view of San Fernando Pampanga" data-location="San Fernando Pampanga" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBv62jkKe9W05P5ExCuYLB68BonvEfyJPje5qht9yhD_3DKSSUVNISf_1Q2t0NNASEsGDyQvbF5zGdcw-Y9sq2tgoTvMxG5ehdCbkDea6De5nzouuzQ0AapaSP5T5DfYaQ72OpTbLbF6XdqnrAJHkm-rARo0BdF_25MEx8-d46NEY4Dqgz8UbVhrHn3LZC9o74kqEL5IhJkmtg5-6axV7eGFtujAaisRvsIeoLlPtxAv_wrj-cQWVKvXR80qBQIbX9Fdt96IONqhq0"/>
+</div>
+</body></html>
