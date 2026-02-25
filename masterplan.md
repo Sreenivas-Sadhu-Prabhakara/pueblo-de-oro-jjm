@@ -2,7 +2,7 @@
 
 ## Project Overview
 
-Pueblo de Oro is a premium residential development in La Aldea Fernandina II, Cavite, Philippines. This website serves as the primary marketing and lead generation tool for the project.
+Pueblo de Oro is a premium residential development in La Aldea Fernandina II, Pampanga, Philippines. This website serves as the primary marketing and lead generation tool for the project.
 
 ## Current Status: ✅ COMPLETED
 
@@ -74,8 +74,8 @@ Pueblo de Oro is a premium residential development in La Aldea Fernandina II, Ca
 
 ## SEO Strategy
 
-- Local SEO optimization for Cavite housing
-- Keyword targeting: "affordable housing Cavite", "Pag-IBIG financing"
+- Local SEO optimization for Pampanga housing
+- Keyword targeting: "affordable housing Pampanga", "Pag-IBIG financing"
 - Mobile-first responsive design
 - Fast loading times (<3 seconds)
 - Structured data markup

@@ -10,7 +10,7 @@ export function LocationSection() {
           <span className="section-eyebrow">Where We Are</span>
           <h2 className="section-title">Prime Location</h2>
           <p className="section-subtitle">
-            Strategically situated in La Aldea Fernandina II, Cavite — accessible yet peaceful
+            Strategically situated in La Aldea Fernandina II, Pampanga — accessible yet peaceful
           </p>
         </div>
 
@@ -37,7 +37,7 @@ export function LocationSection() {
           <div className="rounded-2xl border border-slate-300 dark:border-emerald-800 bg-white dark:bg-emerald-900/20 shadow-card overflow-hidden">
             <div className="aspect-video bg-slate-50 dark:bg-emerald-950/40 flex items-center justify-center">
               <img 
-                src="/philippines-map.svg" 
+                src="./ph_map_usage.jpg" 
                 alt="Philippines map with San Fernando, Pampanga marked"
                 className="w-full h-full object-contain"
               />
@@ -45,10 +45,10 @@ export function LocationSection() {
             <div className="p-5 flex items-center justify-between border-t border-slate-300 dark:border-emerald-800 bg-white dark:bg-emerald-900/10">
               <div>
                 <p className="text-sm font-semibold text-slate-800 dark:text-white">San Fernando, Pampanga</p>
-                <p className="text-xs text-slate-500 dark:text-emerald-300/70">La Aldea Fernandina II, Cavite</p>
+                <p className="text-xs text-slate-500 dark:text-emerald-300/70">La Aldea Fernandina II</p>
               </div>
               <a
-                href="https://maps.google.com/?q=La+Aldea+Fernandina+II+Cavite+Philippines"
+                href="https://maps.google.com/?q=La+Aldea+Fernandina+II+Pampanga+Philippines"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-1.5 px-4 py-2.5 bg-primary-500 text-white
@@ -60,6 +60,15 @@ export function LocationSection() {
               </a>
             </div>
           </div>
+        </div>
+
+        {/* Additional Location Image */}
+        <div className="mt-8 rounded-2xl border border-slate-300 dark:border-emerald-800 bg-white dark:bg-emerald-900/20 shadow-card overflow-hidden">
+          <img 
+            src="/ph_map_usage.jpg" 
+            alt="Location usage guide or additional visual"
+            className="w-full h-auto"
+          />
         </div>
       </div>
     </section>

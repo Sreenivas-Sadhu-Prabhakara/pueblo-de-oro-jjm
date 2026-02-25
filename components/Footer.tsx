@@ -145,7 +145,7 @@ export default function Footer() {
                   <div className="w-8 h-8 rounded-lg bg-slate-800 flex items-center justify-center flex-shrink-0">
                     <IconLocation size={16} className="text-slate-400" />
                   </div>
-                  <span className="text-slate-400">La Aldea Fernandina II<br />Cavite, Philippines</span>
+                  <span className="text-slate-400">La Aldea Fernandina II<br />Pampanga, Philippines</span>
                 </div>
               </li>
             </ul>

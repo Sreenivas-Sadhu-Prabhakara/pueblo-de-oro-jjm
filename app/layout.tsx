@@ -4,7 +4,7 @@ import React from 'react'
 export const metadata = {
   title: 'Pueblo de Oro - Affordable Housing in Philippines | Pag-IBIG Financing',
   description: 'Premium residential properties in La Aldea Fernandina II. Townhouse from ₱2.4M, Single Attached from ₱3.6M. Flexible Pag-IBIG financing available.',
-  keywords: 'affordable housing Philippines, Pag-IBIG financing, townhouse, single attached, La Aldea, Cavite',
+  keywords: 'affordable housing Philippines, Pag-IBIG financing, townhouse, single attached, La Aldea, Pampanga',
   authors: [{ name: 'Pueblo de Oro' }],
   creator: 'Pueblo de Oro Development',
   publisher: 'Pueblo de Oro',

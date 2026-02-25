@@ -4,7 +4,7 @@ const testimonials = [
 	{
 		id: '1',
 		name: 'Maria Santos',
-		location: 'Cavite',
+		location: 'Pampanga',
 		initials: 'MS',
 		rating: 5,
 		text: 'Pueblo de Oro exceeded our expectations! The quality of construction and community amenities are outstanding. Our new home feels like a dream come true.',
