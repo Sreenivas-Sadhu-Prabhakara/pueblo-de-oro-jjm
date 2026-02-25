@@ -1,6 +1,7 @@
 'use client'
 
 import { useEffect, useState } from 'react'
+import { IconPhone, IconClose, IconChat } from '@/components/Icons'
 
 export function FloatingCTA() {
   const [visible, setVisible] = useState(false)
@@ -47,7 +48,7 @@ export function FloatingCTA() {
             href="tel:+639123456789"
             className="flex items-center gap-2.5 px-4 py-2.5 bg-slate-700 text-white rounded-full shadow-lg hover:bg-slate-800 transition-all text-sm font-semibold whitespace-nowrap"
           >
-            <span className="material-symbols-outlined" style={{ fontSize: '20px' }}>phone</span>
+            <IconPhone size={20} className="text-white flex-shrink-0" />
             Call Now
           </a>
         </div>
@@ -63,14 +64,19 @@ export function FloatingCTA() {
         }`}
         aria-label="Contact us"
       >
-        <span
-          className={`material-symbols-outlined transition-colors ${
-            expanded ? 'text-white dark:text-slate-900' : 'text-white'
-          }`}
-          style={{ fontSize: '26px' }}
-        >
-          {expanded ? 'close' : 'chat'}
-        </span>
+        {expanded ? (
+          <IconClose
+            size={26}
+            className={`transition-colors ${
+              expanded ? 'text-white dark:text-slate-900' : 'text-white'
+            }`}
+          />
+        ) : (
+          <IconChat
+            size={26}
+            className="text-white"
+          />
+        )}
       </button>
     </div>
   )

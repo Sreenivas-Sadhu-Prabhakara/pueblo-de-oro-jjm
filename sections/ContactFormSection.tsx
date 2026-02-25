@@ -1,6 +1,7 @@
 'use client'
 
 import React, { useState } from 'react'
+import { IconSend, IconPhone, IconWhatsApp } from '@/components/Icons'
 
 interface FormData {
   name: string
@@ -212,7 +213,7 @@ export function ContactForm() {
               </>
             ) : (
               <>
-                <span className="material-symbols-outlined" style={{ fontSize: '18px' }}>send</span>
+                <IconSend size={18} className="text-white" />
                 Send Message
               </>
             )}
@@ -226,7 +227,7 @@ export function ContactForm() {
             className="flex items-center gap-3.5 p-5 bg-slate-50 dark:bg-slate-800/30 border border-slate-200 dark:border-slate-800 rounded-2xl hover:border-primary-300 dark:hover:border-primary-700 hover:bg-primary-50 dark:hover:bg-primary-950/20 transition-all duration-300 group"
           >
             <div className="w-10 h-10 rounded-xl bg-primary-100 dark:bg-primary-950/50 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-              <span className="text-xl leading-none">📞</span>
+              <IconPhone size={20} className="text-primary-600 dark:text-primary-400" />
             </div>
             <div>
               <p className="text-sm font-semibold text-slate-900 dark:text-white">Call Us</p>
@@ -238,7 +239,7 @@ export function ContactForm() {
             className="flex items-center gap-3.5 p-5 bg-slate-50 dark:bg-slate-800/30 border border-slate-200 dark:border-slate-800 rounded-2xl hover:border-primary-300 dark:hover:border-primary-700 hover:bg-primary-50 dark:hover:bg-primary-950/20 transition-all duration-300 group"
           >
             <div className="w-10 h-10 rounded-xl bg-primary-100 dark:bg-primary-950/50 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
-              <span className="text-xl leading-none">💬</span>
+              <IconWhatsApp size={20} className="text-primary-600 dark:text-primary-400" />
             </div>
             <div>
               <p className="text-sm font-semibold text-slate-900 dark:text-white">WhatsApp</p>

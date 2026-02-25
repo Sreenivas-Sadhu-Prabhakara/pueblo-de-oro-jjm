@@ -1,5 +1,7 @@
 "use client"
 
+import { IconCalendar, IconPhone, IconHomeWork, IconWhatsApp, IconLocation } from '@/components/Icons'
+
 export default function Footer() {
   const currentYear = new Date().getFullYear()
 
@@ -21,14 +23,14 @@ export default function Footer() {
               onClick={() => scrollTo('contact')}
               className="inline-flex items-center gap-2 px-7 py-3 bg-white text-primary-700 font-bold text-sm rounded-xl hover:bg-primary-50 transition-all duration-200 shadow-lg"
             >
-              <span className="material-symbols-outlined" style={{ fontSize: '18px' }}>calendar_today</span>
+              <IconCalendar size={18} className="text-primary-700" />
               Book a Visit
             </button>
             <a
               href="tel:+639123456789"
               className="inline-flex items-center gap-2 px-7 py-3 bg-white/15 text-white font-bold text-sm rounded-xl hover:bg-white/25 transition-all duration-200 backdrop-blur-sm border border-white/20"
             >
-              <span className="material-symbols-outlined" style={{ fontSize: '18px' }}>phone</span>
+              <IconPhone size={18} className="text-white" />
               Call Now
             </a>
           </div>
@@ -42,7 +44,7 @@ export default function Footer() {
           <div>
             <div className="flex items-center gap-3 mb-4">
               <div className="w-9 h-9 rounded-xl bg-primary-500 flex items-center justify-center text-white shadow-md shadow-primary-500/30">
-                <span className="material-symbols-outlined" style={{ fontSize: '20px' }}>home_work</span>
+                <IconHomeWork size={20} className="text-white" />
               </div>
               <span className="font-bold text-lg text-white leading-tight tracking-tight">
                 Pueblo <span className="text-primary-400">de Oro</span>
@@ -125,7 +127,7 @@ export default function Footer() {
               <li>
                 <a href="tel:+639123456789" className="text-slate-400 hover:text-primary-400 transition-colors flex items-center gap-3 text-sm group">
                   <div className="w-8 h-8 rounded-lg bg-slate-800 group-hover:bg-primary-500/20 flex items-center justify-center transition-colors">
-                    <span className="text-base">📞</span>
+                    <IconPhone size={16} className="text-slate-400 group-hover:text-primary-400" />
                   </div>
                   +63 9XX XXX XXXX
                 </a>
@@ -133,7 +135,7 @@ export default function Footer() {
               <li>
                 <a href="https://wa.me/639123456789" target="_blank" rel="noopener noreferrer" className="text-slate-400 hover:text-primary-400 transition-colors flex items-center gap-3 text-sm group">
                   <div className="w-8 h-8 rounded-lg bg-slate-800 group-hover:bg-primary-500/20 flex items-center justify-center transition-colors">
-                    <span className="text-base">💬</span>
+                    <IconWhatsApp size={16} className="text-slate-400 group-hover:text-primary-400" />
                   </div>
                   WhatsApp Chat
                 </a>
@@ -141,7 +143,7 @@ export default function Footer() {
               <li>
                 <div className="flex items-center gap-3 text-sm">
                   <div className="w-8 h-8 rounded-lg bg-slate-800 flex items-center justify-center flex-shrink-0">
-                    <span className="text-base">📍</span>
+                    <IconLocation size={16} className="text-slate-400" />
                   </div>
                   <span className="text-slate-400">La Aldea Fernandina II<br />Cavite, Philippines</span>
                 </div>

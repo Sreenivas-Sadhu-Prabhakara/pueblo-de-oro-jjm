@@ -1,6 +1,7 @@
 'use client'
 
 import { useCallback, useEffect, useState } from 'react'
+import { IconFullscreen } from '@/components/Icons'
 
 interface ImageGalleryProps {
   images: string[]
@@ -66,7 +67,7 @@ export function ImageGallery({ images, alt }: ImageGalleryProps) {
 
         {/* Expand hint */}
         <div className="absolute bottom-3 left-3 bg-black/50 text-white text-xs font-medium px-2.5 py-1.5 rounded-lg backdrop-blur-sm flex items-center gap-1.5 opacity-0 group-hover:opacity-100 transition-opacity">
-          <span className="material-symbols-outlined" style={{ fontSize: '14px' }}>fullscreen</span>
+          <IconFullscreen size={14} className="text-white" />
           Click to expand
         </div>
 

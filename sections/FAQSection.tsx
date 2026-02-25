@@ -1,6 +1,7 @@
 'use client'
 
 import { useState } from 'react'
+import { IconExpandMore, IconChat } from '@/components/Icons'
 
 const faqs = [
 	{
@@ -65,25 +66,22 @@ export function FAQSection() {
 								>
 									<span className="text-sm font-semibold text-slate-900 dark:text-white">
 										{faq.question}
-									</span>
-									<span
-										className={`flex-shrink-0 w-7 h-7 rounded-full flex items-center justify-center transition-all duration-300 ${
+									</span>								<span
+									className={`flex-shrink-0 w-7 h-7 rounded-full flex items-center justify-center transition-all duration-300 ${
+										isOpen
+											? 'bg-primary-500 rotate-180'
+											: 'bg-primary-100 dark:bg-primary-950/50'
+									}`}
+								>
+									<IconExpandMore
+										size={16}
+										className={`transition-colors ${
 											isOpen
-												? 'bg-primary-500 rotate-180'
-												: 'bg-primary-100 dark:bg-primary-950/50'
+												? 'text-white'
+												: 'text-primary-600 dark:text-primary-400'
 										}`}
-									>
-										<span
-											className={`material-symbols-outlined transition-colors ${
-												isOpen
-													? 'text-white'
-													: 'text-primary-600 dark:text-primary-400'
-											}`}
-											style={{ fontSize: '16px' }}
-										>
-											expand_more
-										</span>
-									</span>
+									/>
+								</span>
 								</button>
 								<div
 									className={`overflow-hidden transition-all duration-300 ${
@@ -117,9 +115,7 @@ export function FAQSection() {
                        hover:bg-primary-600 transition-all duration-200 shadow-md shadow-primary-500/20
                        hover:shadow-lg hover:shadow-primary-500/25"
 					>
-						<span className="material-symbols-outlined" style={{ fontSize: '18px' }}>
-							chat
-						</span>
+						<IconChat size={18} className="text-white" />
 						Contact Our Sales Team
 					</a>
 				</div>
