@@ -27,12 +27,12 @@ const houseModels: HouseModel[] = [
     bedrooms: 3,
     bathrooms: 2,
     images: [
-      'https://images.unsplash.com/photo-1570129477492-45c003d96d4f?w=800&h=600&fit=crop',
-      'https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=800&h=600&fit=crop',
-      'https://images.unsplash.com/photo-1570129477492-45c003d96d4f?w=800&h=600&fit=crop'
+      '/assets/pueblo-de-oro-living-room.jpg',
+      '/assets/pueblo-de-oro-kitchen.jpg',
+      '/assets/pueblo-de-oro-bedroom.jpg'
     ],
-    floorPlan: 'https://images.unsplash.com/photo-1440404653985-ab127d49abc1?w=800&h=600&fit=crop',
-    videoUrl: 'https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2Fpueblodeoro&show_text=false&width=500',
+    floorPlan: '/assets/pueblo-de-oro-facade.jpg',
+    videoUrl: '/assets/pueblo-de-oro-video-tour.mp4',
     features: ['Spacious living area', 'Modern kitchen', 'Full bath on each floor', 'Backyard space', 'Laundry area']
   },
   {
@@ -44,12 +44,12 @@ const houseModels: HouseModel[] = [
     bedrooms: 4,
     bathrooms: 3,
     images: [
-      'https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=800&h=600&fit=crop',
-      'https://images.unsplash.com/photo-1570129477492-45c003d96d4f?w=800&h=600&fit=crop',
-      'https://images.unsplash.com/photo-1564013799919-ab600027ffc6?w=800&h=600&fit=crop'
+      '/assets/pueblo-de-oro-bathroom.jpg',
+      '/assets/pueblo-de-oro-garden.jpg',
+      '/assets/pueblo-de-oro-exterior-1.jpg'
     ],
-    floorPlan: 'https://images.unsplash.com/photo-1440404653985-ab127d49abc1?w=800&h=600&fit=crop',
-    videoUrl: 'https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2Fpueblodeoro&show_text=false&width=500',
+    floorPlan: '/assets/pueblo-de-oro-entrance.jpg',
+    videoUrl: '/assets/pueblo-de-oro-property-video.mp4',
     features: ['Master suite with walk-in closet', 'Island kitchen', 'Living and dining', 'Home office', 'Garage for 2 cars']
   }
 ]
@@ -161,15 +161,13 @@ export function HouseModelsSection() {
               <div className="bg-white rounded-2xl p-8 md:p-12 shadow-lg">
                 <h4 className="text-2xl font-bold text-gray-900 mb-6">Video Tour</h4>
                 <div className="aspect-video bg-gray-200 rounded-xl overflow-hidden">
-                  <iframe
+                  <video
                     title={`${model.name} video tour`}
                     src={model.videoUrl}
-                    width="100%"
-                    height="500"
-                    className="border-0"
-                    allowFullScreen
-                    allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
-                  ></iframe>
+                    controls
+                    className="w-full h-full object-cover"
+                    preload="metadata"
+                  />
                 </div>
               </div>
             </div>
