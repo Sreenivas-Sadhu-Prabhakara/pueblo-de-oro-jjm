@@ -1,5 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -16,15 +16,13 @@
   }
 
   body {
-    @apply bg-neutral-50 text-neutral-800 font-sans leading-relaxed;
+    @apply bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 font-sans antialiased transition-colors duration-200;
   }
 
-  /* headings – no forced margin/color so Tailwind utilities win */
   h1, h2, h3, h4, h5, h6 {
-    @apply font-bold leading-tight tracking-tight text-neutral-900;
+    @apply font-bold leading-tight text-slate-900 dark:text-white;
   }
 
-  /* paragraphs – reset the default browser margin so spacing is explicit */
   p { margin: 0; }
 
   a { @apply transition-colors duration-200; }
@@ -46,117 +44,88 @@
     direction: ltr;
     -webkit-font-smoothing: antialiased;
     vertical-align: middle;
+    font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
   }
 
-  /* Scrollbar */
-  ::-webkit-scrollbar { width: 6px; height: 6px; }
-  ::-webkit-scrollbar-track { @apply bg-neutral-100; }
-  ::-webkit-scrollbar-thumb { @apply bg-neutral-300 rounded-full; }
+  .material-symbols-outlined.fill {
+    font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+  }
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar { width: 8px; height: 8px; }
+  ::-webkit-scrollbar-track { @apply bg-transparent; }
+  ::-webkit-scrollbar-thumb { @apply bg-slate-300 dark:bg-slate-700 rounded-full; }
+  ::-webkit-scrollbar-thumb:hover { @apply bg-slate-400 dark:bg-slate-600; }
 }
 
-/* ─── Component Utilities ───────────────────────────────── */
+/* ─── Components ────────────────────────────────────────── */
 @layer components {
-  /* ── Section wrapper ── */
+
+  /* Section wrapper */
   .section {
     @apply w-full py-20 md:py-28 px-4;
   }
-
   .section-inner {
     @apply max-w-6xl mx-auto;
   }
 
-  /* ── Section heading block ── */
+  /* Section heading */
   .section-heading {
     @apply text-center mb-14;
   }
-
   .section-eyebrow {
-    @apply inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-widest
-           text-primary-600 bg-primary-50 border border-primary-200 rounded-full
-           px-3 py-1 mb-4;
+    @apply inline-block px-3.5 py-1 rounded-full bg-primary-100 dark:bg-primary-950/50 text-primary-700 dark:text-primary-400
+           text-xs font-bold uppercase tracking-wider mb-4;
   }
-
   .section-title {
-    @apply text-3xl sm:text-4xl lg:text-5xl font-black text-neutral-900 mb-4 leading-[1.1];
+    @apply text-3xl sm:text-4xl lg:text-5xl font-black text-slate-900 dark:text-white mb-4 leading-tight;
   }
-
   .section-subtitle {
-    @apply text-lg text-neutral-500 max-w-2xl mx-auto;
+    @apply text-lg text-slate-500 dark:text-slate-400 max-w-2xl mx-auto leading-relaxed;
   }
 
-  /* ── Card ── */
+  /* Card */
   .card {
-    @apply bg-white rounded-2xl p-6 border border-neutral-200
-           shadow-card transition-all duration-200;
+    @apply bg-white dark:bg-surface-dark rounded-2xl border border-slate-200 dark:border-slate-800
+           shadow-card p-6 transition-all duration-300;
   }
-
   .card:hover {
-    @apply shadow-card-hover -translate-y-0.5;
+    @apply shadow-card-hover -translate-y-1;
   }
 
-  /* ── Buttons ── */
-  .btn {
-    @apply inline-flex items-center justify-center gap-2
-           font-semibold rounded-xl transition-all duration-200
-           focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-offset-2
-           active:scale-[0.98] disabled:opacity-50 disabled:cursor-not-allowed;
-  }
-
-  .btn-sm  { @apply btn text-sm px-4 py-2; }
-  .btn-md  { @apply btn text-sm px-5 py-2.5; }
-  .btn-lg  { @apply btn text-base px-7 py-3.5; }
-
-  .btn-primary {
-    @apply btn-lg bg-primary-500 text-white hover:bg-primary-600
-           shadow-md shadow-primary-500/25 hover:shadow-lg hover:shadow-primary-500/30
-           focus-visible:ring-primary-500;
-  }
-
-  .btn-secondary {
-    @apply btn-lg bg-white text-neutral-800 border border-neutral-300
-           hover:border-neutral-400 hover:bg-neutral-50
-           focus-visible:ring-neutral-400;
-  }
-
-  .btn-outline-primary {
-    @apply btn-lg bg-transparent text-primary-600 border-2 border-primary-500
-           hover:bg-primary-50 focus-visible:ring-primary-500;
-  }
-
-  /* ── Form inputs ── */
+  /* Inputs */
   .form-label {
-    @apply block text-sm font-semibold text-neutral-700 mb-1.5;
+    @apply block text-sm font-semibold text-slate-700 dark:text-slate-300 mb-1.5;
   }
-
   .form-input {
-    @apply w-full px-4 py-3 text-neutral-900 bg-white border border-neutral-300
-           rounded-xl text-sm leading-normal
-           focus:outline-none focus:ring-2 focus:ring-primary-500/40 focus:border-primary-500
-           placeholder:text-neutral-400 transition-colors duration-150;
+    @apply w-full px-4 py-3 bg-white dark:bg-slate-800/60
+           border border-slate-300 dark:border-slate-700 rounded-xl
+           text-slate-900 dark:text-white placeholder-slate-400
+           focus:ring-2 focus:ring-primary-500/40 focus:border-primary-500
+           outline-none transition-all text-sm;
   }
 
-  .form-input-error {
-    @apply border-red-400 focus:ring-red-400/40 focus:border-red-500;
-  }
+  /* Divider */
+  .divider { @apply border-t border-slate-200 dark:border-slate-800; }
 
-  /* ── Badge ── */
-  .badge {
-    @apply inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-widest
-           px-3 py-1 rounded-full;
-  }
-
-  /* ── Divider ── */
-  .divider { @apply border-t border-neutral-200; }
-
-  /* Accessibility: sr-only */
+  /* sr-only */
   .sr-only {
     position: absolute; width: 1px; height: 1px;
     padding: 0; margin: -1px; overflow: hidden;
     clip: rect(0,0,0,0); white-space: nowrap; border-width: 0;
   }
+
+  /* Section reveal animation */
+  .section-animate {
+    @apply opacity-0;
+    animation: none;
+  }
+  .section-animate.visible {
+    @apply animate-fade-in-up;
+  }
 }
 
-/* ─── Mobile tap-target ─────────────────────────────────── */
+/* ─── Mobile tap targets ────────────────────────────────── */
 @media (max-width: 640px) {
   button, input, select, textarea { min-height: 44px; }
   input[type='checkbox'], input[type='radio'] { min-height: 18px; min-width: 18px; }
@@ -169,4 +138,13 @@
     transition-duration: 0.01ms !important;
     scroll-behavior: auto !important;
   }
+  .section-animate { opacity: 1; }
+}
+
+/* ─── Custom accent color for range inputs ──────────────── */
+input[type='range'] {
+  @apply accent-primary-500;
+}
+input[type='range']::-webkit-slider-thumb {
+  @apply cursor-pointer;
 }

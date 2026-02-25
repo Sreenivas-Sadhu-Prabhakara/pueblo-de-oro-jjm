@@ -61,15 +61,15 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <head>
         <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5" />
         <meta charSet="utf-8" />
         <link rel="icon" href="/favicon.ico" />
-        <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
-        <meta name="theme-color" content="#6B3E2D" />
+        <meta name="theme-color" content="#0c1a12" media="(prefers-color-scheme: dark)" />
+        <meta name="theme-color" content="#f6f8f6" media="(prefers-color-scheme: light)" />
       </head>
-      <body>{children}</body>
+      <body className="overflow-x-hidden">{children}</body>
     </html>
   )
 }

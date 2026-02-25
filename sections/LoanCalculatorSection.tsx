@@ -179,9 +179,9 @@ export function LoanCalculator() {
               ))}
             </div>
 
-            <div className="flex gap-3 p-5 bg-blue-50 border border-blue-200 rounded-2xl">
+            <div className="flex gap-3 p-5 bg-primary-50 border border-primary-200 rounded-2xl">
               <span className="text-xl leading-none flex-shrink-0 mt-0.5">💡</span>
-              <p className="text-sm text-blue-800">
+              <p className="text-sm text-primary-800">
                 You need <strong>₱{calculation.downpaymentAmount.toLocaleString('en-PH', { maximumFractionDigits: 0 })}</strong> upfront
                 and <strong>₱{calculation.monthlyPayment.toLocaleString('en-PH', { maximumFractionDigits: 0 })}/mo</strong> for {state.loanTermYears} years.
               </p>

@@ -128,8 +128,8 @@ export function HouseModelsSection() {
                   </ul>
                 </div>
 
-                <div className="mt-auto p-4 bg-blue-50 border border-blue-200 rounded-xl">
-                  <p className="text-sm text-blue-800 font-medium">
+                <div className="mt-auto p-4 bg-primary-50 border border-primary-200 rounded-xl">
+                  <p className="text-sm text-primary-800 font-medium">
                     💬 Talk to us for great deals on flexible Pag-IBIG payment terms!
                   </p>
                 </div>
