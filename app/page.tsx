@@ -14,26 +14,28 @@ import { TestimonialsSection } from '@/sections/TestimonialsSection'
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-white">
+    <>
       <Header />
-      <div id="hero">
-        <HeroSection />
-      </div>
-      <div id="overview">
-        <OverviewSection />
-      </div>
-      <div id="models">
-        <HouseModelsSection />
-      </div>
-      <LocationSection />
-      <AmenitiesSection />
-      <TestimonialsSection />
-      <LoanCalculator />
-      <FAQSection />
-      <div id="contact">
-        <ContactForm />
-      </div>
+      <main className="min-h-screen bg-background-light dark:bg-background-dark transition-colors duration-300">
+        <div id="hero">
+          <HeroSection />
+        </div>
+        <div id="overview">
+          <OverviewSection />
+        </div>
+        <div id="models">
+          <HouseModelsSection />
+        </div>
+        <LocationSection />
+        <AmenitiesSection />
+        <TestimonialsSection />
+        <LoanCalculator />
+        <FAQSection />
+        <div id="contact">
+          <ContactForm />
+        </div>
+      </main>
       <Footer />
-    </main>
+    </>
   )
 }
