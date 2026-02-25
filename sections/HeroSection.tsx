@@ -8,8 +8,8 @@ export function HeroSection() {
       {/* Background Image/Video Fallback */}
       <div className="absolute inset-0 opacity-30">
         <img
-          src="https://images.unsplash.com/photo-1570129477492-45c003d96d4f?w=1920&h=1080&fit=crop"
-          alt="Luxury residential community"
+          src="/assets/pueblo-de-oro-exterior-1.jpg"
+          alt="Pueblo de Oro luxury residential community"
           className="w-full h-full object-cover"
         />
       </div>
