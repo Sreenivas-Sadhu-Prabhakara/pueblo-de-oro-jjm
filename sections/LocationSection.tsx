@@ -61,15 +61,6 @@ export function LocationSection() {
             </div>
           </div>
         </div>
-
-        {/* Additional Location Image */}
-        <div className="mt-8 rounded-2xl border border-slate-300 dark:border-emerald-800 bg-white dark:bg-emerald-900/20 shadow-card overflow-hidden">
-          <img 
-            src="/ph_map_usage.jpg" 
-            alt="Location usage guide or additional visual"
-            className="w-full h-auto"
-          />
-        </div>
       </div>
     </section>
   )
