@@ -2,62 +2,57 @@
 
 export function LocationSection() {
   return (
-    <section className="w-full py-16 md:py-24 bg-gray-50">
-      <div className="container mx-auto px-4 max-w-6xl">
-        <div className="text-center mb-12 md:mb-16">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
-            Prime Location
-          </h2>
-          <p className="text-lg md:text-xl text-gray-600">
-            Strategically located in La Aldea Fernandina II, Cavite
+    <section id="location" className="section bg-white">
+      <div className="section-inner">
+        <div className="section-heading">
+          <span className="section-eyebrow">Where We Are</span>
+          <h2 className="section-title">Prime Location</h2>
+          <p className="section-subtitle">
+            Strategically situated in La Aldea Fernandina II, Cavite — accessible yet peaceful
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-          <div>
-            <h3 className="text-2xl font-bold text-gray-900 mb-6">Why This Location?</h3>
-            <ul className="space-y-4">
-              <li className="flex items-start">
-                <span className="text-pueblo-600 font-bold text-xl mr-3">🚗</span>
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 items-start">
+          {/* Points */}
+          <div className="space-y-5">
+            {[
+              { icon: '🚗', title: 'Easy Access',          body: 'Just 30 minutes from Manila via major highways — SLEX and CALAX' },
+              { icon: '🏥', title: 'Nearby Amenities',     body: 'Hospitals, schools, malls, and commercial centers all within reach' },
+              { icon: '🌳', title: 'Peaceful Environment', body: 'Serene community with green spaces, fresh air, and low traffic' },
+              { icon: '📈', title: 'Growing Area',         body: 'Rapidly developing zone with strong and consistent property value growth' },
+            ].map(({ icon, title, body }) => (
+              <div key={title} className="flex items-start gap-4 p-5 rounded-2xl border border-neutral-200 bg-neutral-50 hover:border-primary-300 hover:bg-primary-50/40 transition-colors">
+                <span className="text-3xl leading-none mt-0.5 flex-shrink-0">{icon}</span>
                 <div>
-                  <h4 className="font-semibold text-gray-900">Easy Access</h4>
-                  <p className="text-gray-600">Just 30 minutes from Manila via major highways</p>
+                  <h4 className="font-bold text-neutral-900 mb-1">{title}</h4>
+                  <p className="text-sm text-neutral-500 leading-relaxed">{body}</p>
                 </div>
-              </li>
-              <li className="flex items-start">
-                <span className="text-pueblo-600 font-bold text-xl mr-3">🏥</span>
-                <div>
-                  <h4 className="font-semibold text-gray-900">Nearby Amenities</h4>
-                  <p className="text-gray-600">Hospitals, schools, malls, and commercial centers nearby</p>
-                </div>
-              </li>
-              <li className="flex items-start">
-                <span className="text-pueblo-600 font-bold text-xl mr-3">🌳</span>
-                <div>
-                  <h4 className="font-semibold text-gray-900">Peaceful Environment</h4>
-                  <p className="text-gray-600">Serene community with green spaces and fresh air</p>
-                </div>
-              </li>
-              <li className="flex items-start">
-                <span className="text-pueblo-600 font-bold text-xl mr-3">📈</span>
-                <div>
-                  <h4 className="font-semibold text-gray-900">Growing Area</h4>
-                  <p className="text-gray-600">Rapidly developing with increasing property values</p>
-                </div>
-              </li>
-            </ul>
+              </div>
+            ))}
           </div>
 
-          <div className="bg-white rounded-2xl p-6 shadow-lg">
-            <div className="aspect-video bg-gray-200 rounded-xl flex items-center justify-center">
-              <p className="text-gray-500 text-lg">Interactive Map Placeholder</p>
-              {/* Replace with actual map embed */}
+          {/* Map Placeholder */}
+          <div className="rounded-2xl border border-neutral-200 bg-white shadow-card overflow-hidden">
+            <div className="aspect-video bg-neutral-100 flex flex-col items-center justify-center text-neutral-400 gap-2">
+              <span className="material-symbols-outlined" style={{ fontSize: '40px' }}>map</span>
+              <p className="text-sm font-medium">Interactive Map Coming Soon</p>
+              <p className="text-xs">La Aldea Fernandina II, Cavite</p>
             </div>
-            <div className="mt-4 text-center">
-              <p className="text-gray-600 mb-2">La Aldea Fernandina II, Cavite</p>
-              <button className="bg-pueblo-600 text-white px-6 py-3 rounded-lg hover:bg-pueblo-700 transition-colors">
+            <div className="p-5 flex items-center justify-between border-t border-neutral-200">
+              <div>
+                <p className="text-sm font-semibold text-neutral-800">La Aldea Fernandina II</p>
+                <p className="text-xs text-neutral-500">Cavite, Philippines</p>
+              </div>
+              <a
+                href="https://maps.google.com/?q=La+Aldea+Fernandina+II+Cavite+Philippines"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-1.5 px-4 py-2 bg-primary-500 text-white
+                           text-sm font-semibold rounded-xl hover:bg-primary-600 transition-colors"
+              >
+                <span className="material-symbols-outlined" style={{ fontSize: '16px' }}>directions</span>
                 Get Directions
-              </button>
+              </a>
             </div>
           </div>
         </div>

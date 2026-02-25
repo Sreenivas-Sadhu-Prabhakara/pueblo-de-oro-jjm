@@ -95,157 +95,95 @@ export function LoanCalculator() {
     setState(defaults)
   }
 
+  const inputClass = 'w-full px-4 py-3 text-sm text-neutral-900 bg-white border border-neutral-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary-500/40 focus:border-primary-500 transition-colors'
+  const labelClass = 'block text-sm font-semibold text-neutral-700 mb-1.5'
+
   return (
-    <section className="w-full py-16 md:py-24 bg-white">
-      <div className="container mx-auto px-4 max-w-4xl">
-        <div className="text-center mb-12 md:mb-16">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
-            Loan Calculator
-          </h2>
-          <p className="text-lg md:text-xl text-gray-600">
+    <section id="calculator" className="section bg-neutral-50">
+      <div className="max-w-4xl mx-auto px-4">
+        <div className="section-heading">
+          <span className="section-eyebrow">Pag-IBIG Financing</span>
+          <h2 className="section-title">Loan Calculator</h2>
+          <p className="section-subtitle">
             Estimate your monthly payment and see what you can afford
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12">
-          {/* Input Form */}
-          <div className="space-y-6">
-            {/* Property Price */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+          {/* Inputs */}
+          <div className="bg-white rounded-2xl border border-neutral-200 shadow-card p-8 space-y-5">
             <div>
-              <label htmlFor="price" className="block text-lg font-semibold text-gray-900 mb-2">
-                Property Price
-              </label>
+              <label htmlFor="price" className={labelClass}>Property Price</label>
               <div className="relative">
-                <span className="absolute left-4 top-1/2 -translate-y-1/2 text-2xl font-bold text-pueblo-600">₱</span>
-                <input
-                  id="price"
-                  type="number"
-                  value={state.price}
-                  onChange={handlePriceChange}
-                  min="0"
-                  step="100000"
-                  className="w-full pl-10 pr-4 py-3 text-lg border-2 border-gray-300 rounded-lg focus:border-pueblo-600 focus:outline-none transition-colors duration-200"
-                />
+                <span className="absolute left-3.5 top-1/2 -translate-y-1/2 font-bold text-primary-500 text-sm">₱</span>
+                <input id="price" type="number" value={state.price} onChange={handlePriceChange} min="0" step="100000"
+                  className={`${inputClass} pl-8`} />
               </div>
-              <p className="text-sm text-gray-500 mt-2">Enter the total property price</p>
+              <p className="text-xs text-neutral-400 mt-1">Enter the total property price</p>
             </div>
 
-            {/* Down Payment Percentage */}
             <div>
-              <label htmlFor="downpayment" className="block text-lg font-semibold text-gray-900 mb-2">
-                Down Payment ({state.downpayment}%)
-              </label>
-              <input
-                id="downpayment"
-                type="range"
-                min="0"
-                max="100"
-                step="1"
-                value={state.downpayment}
+              <label htmlFor="downpayment" className={labelClass}>Down Payment — {state.downpayment}%</label>
+              <input id="downpayment" type="range" min="0" max="100" step="1" value={state.downpayment}
                 onChange={handleDownpaymentChange}
-                className="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer accent-pueblo-600"
-              />
-              <div className="flex justify-between text-sm text-gray-500 mt-2">
+                className="w-full h-2 rounded-full bg-neutral-200 appearance-none cursor-pointer accent-primary-500" />
+              <div className="flex justify-between text-xs text-neutral-400 mt-1.5">
                 <span>₱{((state.price * state.downpayment) / 100).toLocaleString('en-PH', { maximumFractionDigits: 0 })}</span>
                 <span>{state.downpayment}%</span>
               </div>
             </div>
 
-            {/* Interest Rate */}
             <div>
-              <label htmlFor="interest" className="block text-lg font-semibold text-gray-900 mb-2">
-                Annual Interest Rate ({state.interestRate}%)
-              </label>
-              <input
-                id="interest"
-                type="number"
-                value={state.interestRate}
-                onChange={handleInterestChange}
-                min="0"
-                step="0.1"
-                className="w-full px-4 py-3 text-lg border-2 border-gray-300 rounded-lg focus:border-pueblo-600 focus:outline-none transition-colors duration-200"
-              />
-              <p className="text-sm text-gray-500 mt-2">Typical Pag-IBIG rates: 4-7%</p>
+              <label htmlFor="interest" className={labelClass}>Annual Interest Rate — {state.interestRate}%</label>
+              <input id="interest" type="number" value={state.interestRate} onChange={handleInterestChange} min="0" step="0.1"
+                className={inputClass} />
+              <p className="text-xs text-neutral-400 mt-1">Typical Pag-IBIG rates: 4–7%</p>
             </div>
 
-            {/* Loan Term */}
             <div>
-              <label htmlFor="term" className="block text-lg font-semibold text-gray-900 mb-2">
-                Loan Term ({state.loanTermYears} years)
-              </label>
-              <input
-                id="term"
-                type="number"
-                value={state.loanTermYears}
-                onChange={handleTermChange}
-                min="1"
-                max="30"
-                step="1"
-                className="w-full px-4 py-3 text-lg border-2 border-gray-300 rounded-lg focus:border-pueblo-600 focus:outline-none transition-colors duration-200"
-              />
-              <p className="text-sm text-gray-500 mt-2">Typical range: 10-20 years</p>
+              <label htmlFor="term" className={labelClass}>Loan Term — {state.loanTermYears} years</label>
+              <input id="term" type="number" value={state.loanTermYears} onChange={handleTermChange} min="1" max="30" step="1"
+                className={inputClass} />
+              <p className="text-xs text-neutral-400 mt-1">Typical range: 10–20 years</p>
             </div>
 
-            {/* Reset Button */}
-            <button
-              onClick={resetToDefaults}
-              className="w-full px-6 py-3 bg-gray-200 text-gray-800 font-semibold rounded-lg hover:bg-gray-300 active:bg-gray-400 transition-colors duration-200 min-h-[44px]"
-            >
+            <button onClick={resetToDefaults}
+              className="w-full py-2.5 text-sm font-semibold text-neutral-600 bg-neutral-100 border border-neutral-200 rounded-xl hover:bg-neutral-200 transition-colors">
               Reset to Defaults
             </button>
           </div>
 
-          {/* Results Display */}
-          <div className="space-y-6">
-            {/* Monthly Payment Result */}
-            <div className="bg-gradient-to-br from-pueblo-500 to-pueblo-700 rounded-2xl p-8 text-white shadow-lg">
-              <p className="text-sm font-semibold text-pueblo-100 uppercase tracking-wide mb-2">Monthly Payment</p>
-              <h3 className="text-4xl md:text-5xl font-bold mb-4">
+          {/* Results */}
+          <div className="space-y-4">
+            <div className="bg-gradient-to-br from-primary-500 to-primary-700 rounded-2xl p-8 text-white shadow-lg shadow-primary-500/20">
+              <p className="text-xs font-bold uppercase tracking-widest text-primary-100 mb-2">Monthly Payment</p>
+              <p className="text-5xl font-black mb-1">
                 ₱{calculation.monthlyPayment.toLocaleString('en-PH', { maximumFractionDigits: 0 })}
-              </h3>
-              <p className="text-pueblo-100">Based on your inputs</p>
+              </p>
+              <p className="text-primary-200 text-sm">Based on your inputs</p>
             </div>
 
-            {/* Loan Details Grid */}
-            <div className="grid grid-cols-2 gap-4">
-              {/* Down Payment */}
-              <div className="bg-gray-50 rounded-xl p-6 border border-gray-200">
-                <p className="text-gray-600 text-sm font-semibold mb-2">Down Payment</p>
-                <p className="text-2xl font-bold text-gray-900">
-                  ₱{calculation.downpaymentAmount.toLocaleString('en-PH', { maximumFractionDigits: 0 })}
-                </p>
-              </div>
-
-              {/* Loan Amount */}
-              <div className="bg-gray-50 rounded-xl p-6 border border-gray-200">
-                <p className="text-gray-600 text-sm font-semibold mb-2">Loan Amount</p>
-                <p className="text-2xl font-bold text-gray-900">
-                  ₱{calculation.totalLoan.toLocaleString('en-PH', { maximumFractionDigits: 0 })}
-                </p>
-              </div>
-
-              {/* Total Interest */}
-              <div className="bg-gray-50 rounded-xl p-6 border border-gray-200">
-                <p className="text-gray-600 text-sm font-semibold mb-2">Total Interest</p>
-                <p className="text-2xl font-bold text-gray-900">
-                  ₱{calculation.totalInterest.toLocaleString('en-PH', { maximumFractionDigits: 0 })}
-                </p>
-              </div>
-
-              {/* Total Payment */}
-              <div className="bg-gray-50 rounded-xl p-6 border border-gray-200">
-                <p className="text-gray-600 text-sm font-semibold mb-2">Total Paid</p>
-                <p className="text-2xl font-bold text-gray-900">
-                  ₱{(calculation.totalLoan + calculation.totalInterest).toLocaleString('en-PH', { maximumFractionDigits: 0 })}
-                </p>
-              </div>
+            <div className="grid grid-cols-2 gap-3">
+              {[
+                { label: 'Down Payment',   value: calculation.downpaymentAmount },
+                { label: 'Loan Amount',    value: calculation.totalLoan },
+                { label: 'Total Interest', value: calculation.totalInterest },
+                { label: 'Total Paid',     value: calculation.totalLoan + calculation.totalInterest },
+              ].map(({ label, value }) => (
+                <div key={label} className="bg-white rounded-xl p-4 border border-neutral-200 shadow-card">
+                  <p className="text-xs font-semibold text-neutral-500 mb-1">{label}</p>
+                  <p className="text-lg font-black text-neutral-900">
+                    ₱{value.toLocaleString('en-PH', { maximumFractionDigits: 0 })}
+                  </p>
+                </div>
+              ))}
             </div>
 
-            {/* Summary Box */}
-            <div className="bg-blue-50 border-l-4 border-blue-500 p-6 rounded-lg">
-              <p className="text-blue-900 font-semibold mb-2">💡 Payment Summary</p>
-              <p className="text-blue-800 text-sm">
-                You need ₱{calculation.downpaymentAmount.toLocaleString('en-PH', { maximumFractionDigits: 0 })} upfront and ₱{calculation.monthlyPayment.toLocaleString('en-PH', { maximumFractionDigits: 0 })} per month for {state.loanTermYears} years.
+            <div className="flex gap-3 p-5 bg-blue-50 border border-blue-200 rounded-2xl">
+              <span className="text-xl leading-none flex-shrink-0 mt-0.5">💡</span>
+              <p className="text-sm text-blue-800">
+                You need <strong>₱{calculation.downpaymentAmount.toLocaleString('en-PH', { maximumFractionDigits: 0 })}</strong> upfront
+                and <strong>₱{calculation.monthlyPayment.toLocaleString('en-PH', { maximumFractionDigits: 0 })}/mo</strong> for {state.loanTermYears} years.
               </p>
             </div>
           </div>

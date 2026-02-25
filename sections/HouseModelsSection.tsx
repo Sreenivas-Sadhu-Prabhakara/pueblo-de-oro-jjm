@@ -1,6 +1,7 @@
 'use client'
 
 import { ImageGallery } from '@/components/ImageGallery'
+import Image from 'next/image'
 import { useState } from 'react'
 
 interface HouseModel {
@@ -22,18 +23,18 @@ const houseModels: HouseModel[] = [
     id: 'townhouse',
     name: 'Townhouse',
     price: 2400000,
-    description: 'Modern 3-story townhouse perfect for growing families',
+    description: 'Modern 3-storey townhouse perfect for growing families',
     sqm: 65,
     bedrooms: 3,
     bathrooms: 2,
     images: [
       '/pueblo-de-oro-living-room.jpg',
       '/pueblo-de-oro-kitchen.jpg',
-      '/pueblo-de-oro-bedroom.jpg'
+      '/pueblo-de-oro-bedroom.jpg',
     ],
     floorPlan: '/pueblo-de-oro-facade.jpg',
     videoUrl: '/pueblo-de-oro-video-tour.mp4',
-    features: ['Spacious living area', 'Modern kitchen', 'Full bath on each floor', 'Backyard space', 'Laundry area']
+    features: ['Spacious living area', 'Modern kitchen', 'Full bath on each floor', 'Backyard space', 'Laundry area'],
   },
   {
     id: 'single-attached',
@@ -46,133 +47,129 @@ const houseModels: HouseModel[] = [
     images: [
       '/pueblo-de-oro-bathroom.jpg',
       '/pueblo-de-oro-garden.jpg',
-      '/pueblo-de-oro-exterior-1.jpg'
+      '/pueblo-de-oro-exterior-1.jpg',
     ],
     floorPlan: '/pueblo-de-oro-entrance.jpg',
     videoUrl: '/pueblo-de-oro-property-video.mp4',
-    features: ['Master suite with walk-in closet', 'Island kitchen', 'Living and dining', 'Home office', 'Garage for 2 cars']
-  }
+    features: ['Master suite with walk-in closet', 'Island kitchen', 'Open living & dining', 'Home office', 'Garage for 2 cars'],
+  },
 ]
 
 export function HouseModelsSection() {
-  const [selectedModel, setSelectedModel] = useState<string | null>(null)
+  const [selectedId, setSelectedId] = useState('townhouse')
+  const model = houseModels.find((m) => m.id === selectedId)!
 
   return (
-    <section className="w-full py-16 md:py-24 bg-gray-50">
-      <div className="container mx-auto px-4 max-w-6xl">
-        {/* Section Heading */}
-        <div className="text-center mb-12 md:mb-16">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
-            House Models
-          </h2>
-          <p className="text-lg md:text-xl text-gray-600">
+    <section id="models" className="section bg-neutral-50">
+      <div className="section-inner">
+        {/* Heading */}
+        <div className="section-heading">
+          <span className="section-eyebrow">Our Properties</span>
+          <h2 className="section-title">House Models</h2>
+          <p className="section-subtitle">
             Choose the perfect home that fits your lifestyle and budget
           </p>
         </div>
 
-        {/* Model Tabs */}
-        <div className="flex gap-4 justify-center mb-12 flex-wrap">
-          {houseModels.map((model) => (
+        {/* Tabs */}
+        <div className="flex gap-3 justify-center mb-10 flex-wrap">
+          {houseModels.map((m) => (
             <button
-              key={model.id}
-              onClick={() => setSelectedModel(model.id)}
-              className={`px-6 py-3 rounded-lg font-semibold transition-all duration-200 min-h-[44px] ${
-                selectedModel === model.id || (selectedModel === null && model.id === 'townhouse')
-                  ? 'bg-pueblo-600 text-white shadow-lg'
-                  : 'bg-white text-pueblo-600 border-2 border-pueblo-600 hover:bg-pueblo-50'
+              key={m.id}
+              onClick={() => setSelectedId(m.id)}
+              className={`px-6 py-2.5 rounded-xl font-semibold text-sm transition-all duration-200 ${
+                selectedId === m.id
+                  ? 'bg-primary-500 text-white shadow-md shadow-primary-500/30'
+                  : 'bg-white text-neutral-700 border border-neutral-300 hover:border-primary-400 hover:text-primary-600'
               }`}
             >
-              {model.name}
+              {m.name}
             </button>
           ))}
         </div>
 
-        {/* Model Details */}
-        {houseModels.map((model) => {
-          const isSelected = selectedModel === model.id || (selectedModel === null && model.id === 'townhouse')
-          if (!isSelected) return null
+        {/* Model Detail */}
+        <div className="space-y-6">
+          {/* Info + Floor Plan */}
+          <div className="bg-white rounded-2xl border border-neutral-200 shadow-card overflow-hidden">
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-0">
+              {/* Info */}
+              <div className="p-8 md:p-10 flex flex-col">
+                <h3 className="text-3xl font-black text-neutral-900 mb-1">{model.name}</h3>
+                <p className="text-neutral-500 mb-6">{model.description}</p>
 
-          return (
-            <div key={model.id} className="space-y-12">
-              {/* Model Header */}
-              <div className="bg-white rounded-2xl p-8 md:p-12 shadow-lg">
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
-                  <div>
-                    <h3 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">{model.name}</h3>
-                    <p className="text-gray-600 text-lg mb-6">{model.description}</p>
-                    
-                    {/* Specs Grid */}
-                    <div className="grid grid-cols-2 gap-4 mb-6">
-                      <div className="bg-gray-50 p-4 rounded-lg">
-                        <p className="text-gray-600 text-sm font-semibold">Floor Area</p>
-                        <p className="text-2xl font-bold text-pueblo-600">{model.sqm}m²</p>
-                      </div>
-                      <div className="bg-gray-50 p-4 rounded-lg">
-                        <p className="text-gray-600 text-sm font-semibold">Bedrooms</p>
-                        <p className="text-2xl font-bold text-pueblo-600">{model.bedrooms}</p>
-                      </div>
-                      <div className="bg-gray-50 p-4 rounded-lg">
-                        <p className="text-gray-600 text-sm font-semibold">Bathrooms</p>
-                        <p className="text-2xl font-bold text-pueblo-600">{model.bathrooms}</p>
-                      </div>
-                      <div className="bg-pueblo-100 p-4 rounded-lg">
-                        <p className="text-pueblo-700 text-sm font-semibold">Starting at</p>
-                        <p className="text-2xl font-bold text-pueblo-600">₱{(model.price / 1000000).toFixed(1)}M</p>
-                      </div>
+                {/* Specs */}
+                <div className="grid grid-cols-2 gap-3 mb-6">
+                  {[
+                    { label: 'Floor Area', value: `${model.sqm} m²` },
+                    { label: 'Bedrooms',   value: `${model.bedrooms} BR` },
+                    { label: 'Bathrooms',  value: `${model.bathrooms} Bath` },
+                    { label: 'Starting at', value: `₱${(model.price / 1000000).toFixed(1)}M`, highlight: true },
+                  ].map(({ label, value, highlight }) => (
+                    <div key={label} className={`rounded-xl p-4 ${highlight ? 'bg-primary-50 border border-primary-200' : 'bg-neutral-50 border border-neutral-200'}`}>
+                      <p className={`text-xs font-semibold mb-1 ${highlight ? 'text-primary-600' : 'text-neutral-500'}`}>{label}</p>
+                      <p className={`text-xl font-black ${highlight ? 'text-primary-600' : 'text-neutral-900'}`}>{value}</p>
                     </div>
+                  ))}
+                </div>
 
-                    {/* Features */}
-                    <div className="mb-6">
-                      <h4 className="font-bold text-gray-900 mb-3">Key Features:</h4>
-                      <ul className="space-y-2">
-                        {model.features.map((feature, idx) => (
-                          <li key={idx} className="flex items-center text-gray-600">
-                            <span className="text-pueblo-600 font-bold mr-2">•</span>
-                            {feature}
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
+                {/* Features */}
+                <div className="mb-6">
+                  <h4 className="text-sm font-bold text-neutral-700 uppercase tracking-wide mb-3">Key Features</h4>
+                  <ul className="space-y-2">
+                    {model.features.map((f) => (
+                      <li key={f} className="flex items-center gap-2 text-sm text-neutral-600">
+                        <span className="w-4 h-4 rounded-full bg-primary-100 flex items-center justify-center flex-shrink-0">
+                          <span className="material-symbols-outlined text-primary-600" style={{ fontSize: '11px' }}>check</span>
+                        </span>
+                        {f}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
 
-                    <div className="bg-blue-50 border-l-4 border-blue-500 p-4 rounded">
-                      <p className="text-blue-900 font-semibold">💬 Talk to us for great deals on flexible payment terms!</p>
-                    </div>
-                  </div>
-
-                  {/* Floor Plan */}
-                  <div className="flex flex-col">
-                    <h4 className="font-bold text-gray-900 mb-4">Floor Plan</h4>
-                    <img
-                      src={model.floorPlan}
-                      alt={`${model.name} floor plan`}
-                      className="w-full h-auto rounded-xl shadow-md object-cover"
-                    />
-                  </div>
+                <div className="mt-auto p-4 bg-blue-50 border border-blue-200 rounded-xl">
+                  <p className="text-sm text-blue-800 font-medium">
+                    💬 Talk to us for great deals on flexible Pag-IBIG payment terms!
+                  </p>
                 </div>
               </div>
 
-              {/* Gallery Section */}
-              <div className="bg-white rounded-2xl p-8 md:p-12 shadow-lg">
-                <h4 className="text-2xl font-bold text-gray-900 mb-6">Photo Gallery</h4>
-                <ImageGallery images={model.images} alt={`${model.name} photos`} />
-              </div>
-
-              {/* Video Section */}
-              <div className="bg-white rounded-2xl p-8 md:p-12 shadow-lg">
-                <h4 className="text-2xl font-bold text-gray-900 mb-6">Video Tour</h4>
-                <div className="aspect-video bg-gray-200 rounded-xl overflow-hidden">
-                  <video
-                    title={`${model.name} video tour`}
-                    src={model.videoUrl}
-                    controls
-                    className="w-full h-full object-cover"
-                    preload="metadata"
-                  />
+              {/* Floor Plan Image */}
+              <div className="relative min-h-[280px] lg:min-h-0 bg-neutral-100">
+                <Image
+                  src={model.floorPlan}
+                  alt={`${model.name} floor plan`}
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 1024px) 100vw, 50vw"
+                />
+                <div className="absolute top-3 left-3 bg-black/50 text-white text-xs font-semibold px-2.5 py-1 rounded-lg backdrop-blur-sm">
+                  Floor Plan
                 </div>
               </div>
             </div>
-          )
-        })}
+          </div>
+
+          {/* Photo Gallery */}
+          <div className="bg-white rounded-2xl border border-neutral-200 shadow-card p-8 md:p-10">
+            <h4 className="text-lg font-bold text-neutral-900 mb-6">Photo Gallery</h4>
+            <ImageGallery images={model.images} alt={`${model.name} photos`} />
+          </div>
+
+          {/* Video Tour */}
+          <div className="bg-white rounded-2xl border border-neutral-200 shadow-card p-8 md:p-10">
+            <h4 className="text-lg font-bold text-neutral-900 mb-6">Video Tour</h4>
+            <div className="aspect-video rounded-xl overflow-hidden bg-neutral-100">
+              <video
+                src={model.videoUrl}
+                controls
+                className="w-full h-full object-cover"
+                preload="metadata"
+              />
+            </div>
+          </div>
+        </div>
       </div>
     </section>
   )

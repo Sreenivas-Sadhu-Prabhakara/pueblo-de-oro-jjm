@@ -1,29 +1,180 @@
-[00:00:00.362] Server  LOG     ✓ Ready in 213ms
-[00:00:03.426] Server  WARN    Image with src "/assets/pueblo-de-oro-exterior-1.jpg" is using quality "85" which is not configured in images.qualities [75]. Please update your config to [75, 85].
-Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[00:00:04.215] Server  ERROR   ⨯ "The requested resource isn't a valid image for" "/assets/pueblo-de-oro-exterior-1.jpg" "received" null
-[00:00:04.527] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:00:04.527] Browser WARN    Image with src "/assets/pueblo-de-oro-exterior-1.jpg" is using quality "85" which is not configured in images.qualities [75]. Please update your config to [75, 85].
-Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[00:00:04.638] Browser WARN    Image with src "/assets/pueblo-de-oro-exterior-1.jpg" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
-[00:00:04.638] Browser WARN    Image with src "/assets/pueblo-de-oro-exterior-1.jpg" has "fill" and a height value of 0. This is likely because the parent element of the image has not been styled to have a set height.
-[00:00:04.987] Server  WARN    ⚠ Cross origin request detected from 100.100.103.107 to /_next/* resource. In a future major version of Next.js, you will need to explicitly configure "allowedDevOrigins" in next.config to allow this.
+[00:00:00.356] Server  LOG     ✓ Ready in 210ms
+[00:00:02.898] Server  WARN    ⚠ Cross origin request detected from 100.100.103.107 to /_next/* resource. In a future major version of Next.js, you will need to explicitly configure "allowedDevOrigins" in next.config to allow this.
 Read more: https://nextjs.org/docs/app/api-reference/config/next-config-js/allowedDevOrigins
-[00:00:05.169] Server  ERROR   ⨯ "The requested resource isn't a valid image for" "/assets/pueblo-de-oro-exterior-1.jpg" "received" null
-[00:00:05.597] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:00:05.745] Browser WARN    Image with src "/assets/pueblo-de-oro-exterior-1.jpg" is using quality "85" which is not configured in images.qualities [75]. Please update your config to [75, 85].
+[00:00:03.345] Server  WARN    Image with src "/pueblo-de-oro-exterior-1.jpg" is using quality "85" which is not configured in images.qualities [75]. Please update your config to [75, 85].
 Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[00:00:05.745] Browser WARN    Image with src "/assets/pueblo-de-oro-exterior-1.jpg" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
-[00:00:05.745] Browser WARN    Image with src "/assets/pueblo-de-oro-exterior-1.jpg" has "fill" and a height value of 0. This is likely because the parent element of the image has not been styled to have a set height.
-[00:01:12.008] Server  LOG     ✓ Compiled in 22ms
-[00:01:12.103] Browser WARN    Image with src "/pueblo-de-oro-exterior-1.jpg" is using quality "85" which is not configured in images.qualities [75]. Please update your config to [75, 85].
+[00:00:03.846] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:00:03.846] Browser WARN    Image with src "/pueblo-de-oro-exterior-1.jpg" is using quality "85" which is not configured in images.qualities [75]. Please update your config to [75, 85].
 Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[00:01:12.166] Browser WARN    Image with src "/pueblo-de-oro-exterior-1.jpg" is using quality "85" which is not configured in images.qualities [75]. Please update your config to [75, 85].
+[00:00:03.846] Browser WARN    Image with src "/pueblo-de-oro-exterior-1.jpg" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
+[00:00:03.846] Browser WARN    Image with src "/pueblo-de-oro-exterior-1.jpg" has "fill" and a height value of 0. This is likely because the parent element of the image has not been styled to have a set height.
+[00:00:14.978] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:00:14.978] Browser WARN    Image with src "/pueblo-de-oro-exterior-1.jpg" is using quality "85" which is not configured in images.qualities [75]. Please update your config to [75, 85].
 Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[00:01:12.278] Browser WARN    Image with src "/pueblo-de-oro-exterior-1.jpg" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
-[00:01:12.278] Browser WARN    Image with src "/pueblo-de-oro-exterior-1.jpg" has "fill" and a height value of 0. This is likely because the parent element of the image has not been styled to have a set height.
-[00:01:12.293] Browser WARN    Image with src "/pueblo-de-oro-exterior-1.jpg" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
-[00:01:12.293] Browser WARN    Image with src "/pueblo-de-oro-exterior-1.jpg" has "fill" and a height value of 0. This is likely because the parent element of the image has not been styled to have a set height.
-[00:01:26.955] Server  LOG     ✓ Compiled in 15ms
-[00:01:42.156] Server  LOG     ✓ Compiled in 16ms
-[00:01:54.106] Server  LOG     ✓ Compiled in 18ms
+[00:00:14.978] Browser WARN    Image with src "/pueblo-de-oro-exterior-1.jpg" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
+[00:00:14.978] Browser WARN    Image with src "/pueblo-de-oro-exterior-1.jpg" has "fill" and a height value of 0. This is likely because the parent element of the image has not been styled to have a set height.
+[00:00:21.950] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:00:21.951] Browser WARN    Image with src "/pueblo-de-oro-exterior-1.jpg" is using quality "85" which is not configured in images.qualities [75]. Please update your config to [75, 85].
+Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
+[00:00:21.951] Browser WARN    Image with src "/pueblo-de-oro-exterior-1.jpg" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
+[00:00:21.951] Browser WARN    Image with src "/pueblo-de-oro-exterior-1.jpg" has "fill" and a height value of 0. This is likely because the parent element of the image has not been styled to have a set height.
+[00:01:40.029] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:01:40.029] Browser WARN    Image with src "/pueblo-de-oro-exterior-1.jpg" is using quality "85" which is not configured in images.qualities [75]. Please update your config to [75, 85].
+Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
+[00:01:40.029] Browser WARN    Image with src "/pueblo-de-oro-exterior-1.jpg" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
+[00:01:40.029] Browser WARN    Image with src "/pueblo-de-oro-exterior-1.jpg" has "fill" and a height value of 0. This is likely because the parent element of the image has not been styled to have a set height.
+[00:05:47.905] Server  LOG     ✓ Compiled in 20ms
+[00:05:48.006] Browser WARN    Image with src "/pueblo-de-oro-exterior-1.jpg" is using quality "90" which is not configured in images.qualities [75]. Please update your config to [75, 90].
+Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
+[00:05:48.062] Browser WARN    Image with src "/pueblo-de-oro-exterior-1.jpg" is using quality "90" which is not configured in images.qualities [75]. Please update your config to [75, 90].
+Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
+[00:06:14.741] Server  LOG     ✓ Compiled in 14ms
+[00:06:57.340] Server  LOG     ✓ Compiled in 22ms
+[00:07:22.246] Server  LOG     ✓ Compiled in 16ms
+[00:07:38.640] Server  LOG     ✓ Compiled in 20ms
+[00:08:05.271] Server  LOG     ✓ Compiled in 17ms
+[00:09:07.613] Server  WARN    Image with src "/pueblo-de-oro-exterior-1.jpg" is using quality "90" which is not configured in images.qualities [75]. Please update your config to [75, 90].
+Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
+[00:09:09.235] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:09:09.235] Browser WARN    Image with src "/pueblo-de-oro-exterior-1.jpg" is using quality "90" which is not configured in images.qualities [75]. Please update your config to [75, 90].
+Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
+[00:09:09.235] Browser WARN    Image with src "/pueblo-de-oro-exterior-1.jpg" has "fill" prop and "sizes" prop of "100vw", but image is not rendered at full viewport width. Please adjust "sizes" to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
+[00:09:09.235] Browser WARN    Image with src "/pueblo-de-oro-exterior-1.jpg" has "fill" and a height value of 0. This is likely because the parent element of the image has not been styled to have a set height.
+[00:09:59.051] Server  LOG     ✓ Compiled in 15ms
+[00:10:47.262] Server  LOG     ✓ Compiled in 17ms
+[00:11:22.642] Server  LOG     ✓ Compiled in 25ms
+[00:11:22.757] Browser ERROR   ./sections/ContactFormSection.tsx:479:8
+Parsing ecmascript source code failed
+  477 |           </div>
+  478 |         </div>
+> 479 |       </div>
+      |        ^^^^^
+  480 |     </section>
+  481 |   )
+  482 | }
+
+Unterminated regexp literal
+
+Import traces:
+  Client Component Browser:
+    ./sections/ContactFormSection.tsx [Client Component Browser]
+    ./app/page.tsx [Client Component Browser]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./sections/ContactFormSection.tsx [Client Component SSR]
+    ./app/page.tsx [Client Component SSR]
+    ./app/page.tsx [Server Component]
+[00:11:22.761] Browser ERROR   ./sections/ContactFormSection.tsx:479:8
+Parsing ecmascript source code failed
+  477 |           </div>
+  478 |         </div>
+> 479 |       </div>
+      |        ^^^^^
+  480 |     </section>
+  481 |   )
+  482 | }
+
+Unterminated regexp literal
+
+Import traces:
+  Client Component Browser:
+    ./sections/ContactFormSection.tsx [Client Component Browser]
+    ./app/page.tsx [Client Component Browser]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./sections/ContactFormSection.tsx [Client Component SSR]
+    ./app/page.tsx [Client Component SSR]
+    ./app/page.tsx [Server Component]
+[00:12:42.341] Browser ERROR   ./sections/ContactFormSection.tsx:479:8
+Parsing ecmascript source code failed
+  477 |           </div>
+  478 |         </div>
+> 479 |       </div>
+      |        ^^^^^
+  480 |     </section>
+  481 |   )
+  482 | }
+
+Unterminated regexp literal
+
+Import traces:
+  Client Component Browser:
+    ./sections/ContactFormSection.tsx [Client Component Browser]
+    ./app/page.tsx [Client Component Browser]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./sections/ContactFormSection.tsx [Client Component SSR]
+    ./app/page.tsx [Client Component SSR]
+    ./app/page.tsx [Server Component]
+[00:12:42.341] Browser ERROR   ./sections/ContactFormSection.tsx:479:8
+Parsing ecmascript source code failed
+  477 |           </div>
+  478 |         </div>
+> 479 |       </div>
+      |        ^^^^^
+  480 |     </section>
+  481 |   )
+  482 | }
+
+Unterminated regexp literal
+
+Import traces:
+  Client Component Browser:
+    ./sections/ContactFormSection.tsx [Client Component Browser]
+    ./app/page.tsx [Client Component Browser]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./sections/ContactFormSection.tsx [Client Component SSR]
+    ./app/page.tsx [Client Component SSR]
+    ./app/page.tsx [Server Component]
+[00:12:42.341] Browser ERROR   ./sections/ContactFormSection.tsx:479:8
+Parsing ecmascript source code failed
+  477 |           </div>
+  478 |         </div>
+> 479 |       </div>
+      |        ^^^^^
+  480 |     </section>
+  481 |   )
+  482 | }
+
+Unterminated regexp literal
+
+Import traces:
+  Client Component Browser:
+    ./sections/ContactFormSection.tsx [Client Component Browser]
+    ./app/page.tsx [Client Component Browser]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./sections/ContactFormSection.tsx [Client Component SSR]
+    ./app/page.tsx [Client Component SSR]
+    ./app/page.tsx [Server Component]
+[00:12:42.341] Browser ERROR   ./sections/ContactFormSection.tsx:479:8
+Parsing ecmascript source code failed
+  477 |           </div>
+  478 |         </div>
+> 479 |       </div>
+      |        ^^^^^
+  480 |     </section>
+  481 |   )
+  482 | }
+
+Unterminated regexp literal
+
+Import traces:
+  Client Component Browser:
+    ./sections/ContactFormSection.tsx [Client Component Browser]
+    ./app/page.tsx [Client Component Browser]
+    ./app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./sections/ContactFormSection.tsx [Client Component SSR]
+    ./app/page.tsx [Client Component SSR]
+    ./app/page.tsx [Server Component]
+[00:13:59.034] Server  LOG     ✓ Compiled in 14ms
+[00:14:20.768] Server  LOG     ✓ Compiled in 13ms
+[00:14:51.272] Server  LOG     ✓ Compiled in 13ms

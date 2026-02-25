@@ -68,10 +68,10 @@ export function ImageGallery({ images, alt }: ImageGalleryProps) {
           <button
             key={index}
             onClick={() => goToImage(index)}
-            className={`flex-shrink-0 w-16 md:w-20 h-16 md:h-20 rounded-lg overflow-hidden border-2 transition-all duration-200 ${
+            className={`flex-shrink-0 w-16 md:w-20 h-16 md:h-20 rounded-xl overflow-hidden border-2 transition-all duration-200 ${
               index === currentIndex
-                ? 'border-pueblo-600 ring-2 ring-pueblo-300'
-                : 'border-gray-300 hover:border-pueblo-400'
+                ? 'border-primary-500 ring-2 ring-primary-300'
+                : 'border-neutral-200 hover:border-primary-400'
             }`}
             aria-label={`Go to image ${index + 1}`}
           >
