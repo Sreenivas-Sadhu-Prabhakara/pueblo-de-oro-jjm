@@ -1,7 +1,7 @@
 'use client'
 
+import { IconChat, IconClose, IconPhone } from '@/components/Icons'
 import { useEffect, useState } from 'react'
-import { IconPhone, IconClose, IconChat } from '@/components/Icons'
 
 export function FloatingCTA() {
   const [visible, setVisible] = useState(false)

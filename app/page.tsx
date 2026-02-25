@@ -1,7 +1,7 @@
 'use client'
 
-import Footer from '@/components/Footer'
 import { FloatingCTA } from '@/components/FloatingCTA'
+import Footer from '@/components/Footer'
 import { Header } from '@/components/Header'
 import { AmenitiesSection } from '@/sections/AmenitiesSection'
 import { ContactForm } from '@/sections/ContactFormSection'

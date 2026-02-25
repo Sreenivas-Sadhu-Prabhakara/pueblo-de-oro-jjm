@@ -1,11 +1,16 @@
 'use client'
 
-import React from 'react'
 import {
-  IconShield, IconLocation, IconBusiness,
-  IconPayment, IconApartment, IconTrending,
-  IconStar, IconCheck,
-} from '@/components/Icons'
+    IconApartment,
+    IconBusiness,
+    IconCheck,
+    IconLocation,
+    IconPayment,
+    IconShield,
+    IconStar,
+    IconTrending,
+} from '@/components/Icons';
+import React from 'react';
 
 const highlights: { icon: React.FC<{className?: string; size?: number}>; title: string; desc: string }[] = [
   { icon: IconShield,   title: 'Safe & Secure',      desc: '24/7 security, gated community with CCTV surveillance' },

@@ -1,7 +1,7 @@
 'use client'
 
+import { IconPhone, IconSend, IconWhatsApp } from '@/components/Icons'
 import React, { useState } from 'react'
-import { IconSend, IconPhone, IconWhatsApp } from '@/components/Icons'
 
 interface FormData {
   name: string

@@ -1,6 +1,6 @@
 "use client"
 
-import { IconCalendar, IconPhone, IconHomeWork, IconWhatsApp, IconLocation } from '@/components/Icons'
+import { IconCalendar, IconHomeWork, IconLocation, IconPhone, IconWhatsApp } from '@/components/Icons'
 
 export default function Footer() {
   const currentYear = new Date().getFullYear()

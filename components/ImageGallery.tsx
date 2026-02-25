@@ -1,7 +1,7 @@
 'use client'
 
-import { useCallback, useEffect, useState } from 'react'
 import { IconFullscreen } from '@/components/Icons'
+import { useCallback, useEffect, useState } from 'react'
 
 interface ImageGalleryProps {
   images: string[]

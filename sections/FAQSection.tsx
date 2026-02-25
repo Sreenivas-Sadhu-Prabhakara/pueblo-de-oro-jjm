@@ -1,7 +1,7 @@
 'use client'
 
+import { IconChat, IconExpandMore } from '@/components/Icons'
 import { useState } from 'react'
-import { IconExpandMore, IconChat } from '@/components/Icons'
 
 const faqs = [
 	{
