@@ -1,5 +1,6 @@
 'use client'
 
+import { IconCheck } from '@/components/Icons'
 import { ImageGallery } from '@/components/ImageGallery'
 import Image from 'next/image'
 import { useState } from 'react'
@@ -60,7 +61,7 @@ export function HouseModelsSection() {
   const model = houseModels.find((m) => m.id === selectedId)!
 
   return (
-    <section id="models" className="section bg-neutral-50">
+    <section id="models" className="section bg-slate-50 dark:bg-background-dark">
       <div className="section-inner">
         {/* Heading */}
         <div className="section-heading">
@@ -77,10 +78,10 @@ export function HouseModelsSection() {
             <button
               key={m.id}
               onClick={() => setSelectedId(m.id)}
-              className={`px-6 py-2.5 rounded-xl font-semibold text-sm transition-all duration-200 ${
+              className={`px-6 py-2.5 rounded-xl font-semibold text-sm transition-all duration-300 ${
                 selectedId === m.id
-                  ? 'bg-primary-500 text-white shadow-md shadow-primary-500/30'
-                  : 'bg-white text-neutral-700 border border-neutral-300 hover:border-primary-400 hover:text-primary-600'
+                  ? 'bg-primary-500 text-white shadow-lg shadow-primary-500/25'
+                  : 'bg-white dark:bg-surface-dark text-slate-600 dark:text-slate-300 border border-slate-200 dark:border-slate-700 hover:border-primary-300 dark:hover:border-primary-700 hover:text-primary-600 dark:hover:text-primary-400'
               }`}
             >
               {m.name}
@@ -91,12 +92,12 @@ export function HouseModelsSection() {
         {/* Model Detail */}
         <div className="space-y-6">
           {/* Info + Floor Plan */}
-          <div className="bg-white rounded-2xl border border-neutral-200 shadow-card overflow-hidden">
+          <div className="bg-white dark:bg-surface-dark rounded-2xl border border-slate-200 dark:border-slate-800 shadow-card overflow-hidden">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-0">
               {/* Info */}
               <div className="p-8 md:p-10 flex flex-col">
-                <h3 className="text-3xl font-black text-neutral-900 mb-1">{model.name}</h3>
-                <p className="text-neutral-500 mb-6">{model.description}</p>
+                <h3 className="text-3xl font-black text-slate-900 dark:text-white mb-1">{model.name}</h3>
+                <p className="text-slate-500 dark:text-slate-400 mb-6">{model.description}</p>
 
                 {/* Specs */}
                 <div className="grid grid-cols-2 gap-3 mb-6">
@@ -106,21 +107,25 @@ export function HouseModelsSection() {
                     { label: 'Bathrooms',  value: `${model.bathrooms} Bath` },
                     { label: 'Starting at', value: `₱${(model.price / 1000000).toFixed(1)}M`, highlight: true },
                   ].map(({ label, value, highlight }) => (
-                    <div key={label} className={`rounded-xl p-4 ${highlight ? 'bg-primary-50 border border-primary-200' : 'bg-neutral-50 border border-neutral-200'}`}>
-                      <p className={`text-xs font-semibold mb-1 ${highlight ? 'text-primary-600' : 'text-neutral-500'}`}>{label}</p>
-                      <p className={`text-xl font-black ${highlight ? 'text-primary-600' : 'text-neutral-900'}`}>{value}</p>
+                    <div key={label} className={`rounded-xl p-4 ${
+                      highlight
+                        ? 'bg-primary-50 dark:bg-primary-950/40 border border-primary-200 dark:border-primary-800'
+                        : 'bg-slate-50 dark:bg-slate-800/40 border border-slate-200 dark:border-slate-700'
+                    }`}>
+                      <p className={`text-xs font-semibold mb-1 ${highlight ? 'text-primary-600 dark:text-primary-400' : 'text-slate-500 dark:text-slate-400'}`}>{label}</p>
+                      <p className={`text-xl font-black ${highlight ? 'text-primary-600 dark:text-primary-400' : 'text-slate-900 dark:text-white'}`}>{value}</p>
                     </div>
                   ))}
                 </div>
 
                 {/* Features */}
                 <div className="mb-6">
-                  <h4 className="text-sm font-bold text-neutral-700 uppercase tracking-wide mb-3">Key Features</h4>
-                  <ul className="space-y-2">
+                  <h4 className="text-sm font-bold text-slate-700 dark:text-slate-300 uppercase tracking-wide mb-3">Key Features</h4>
+                  <ul className="space-y-2.5">
                     {model.features.map((f) => (
-                      <li key={f} className="flex items-center gap-2 text-sm text-neutral-600">
-                        <span className="w-4 h-4 rounded-full bg-primary-100 flex items-center justify-center flex-shrink-0">
-                          <span className="material-symbols-outlined text-primary-600" style={{ fontSize: '11px' }}>check</span>
+                      <li key={f} className="flex items-center gap-2.5 text-sm text-slate-600 dark:text-slate-300">
+                        <span className="w-5 h-5 rounded-full bg-primary-100 dark:bg-primary-950/50 flex items-center justify-center flex-shrink-0">
+                          <IconCheck size={12} className="text-primary-600 dark:text-primary-400" />
                         </span>
                         {f}
                       </li>
@@ -128,15 +133,15 @@ export function HouseModelsSection() {
                   </ul>
                 </div>
 
-                <div className="mt-auto p-4 bg-primary-50 border border-primary-200 rounded-xl">
-                  <p className="text-sm text-primary-800 font-medium">
+                <div className="mt-auto p-4 bg-primary-50 dark:bg-primary-950/30 border border-primary-200 dark:border-primary-800 rounded-xl">
+                  <p className="text-sm text-primary-800 dark:text-primary-300 font-medium">
                     💬 Talk to us for great deals on flexible Pag-IBIG payment terms!
                   </p>
                 </div>
               </div>
 
               {/* Floor Plan Image */}
-              <div className="relative min-h-[280px] lg:min-h-0 bg-neutral-100">
+              <div className="relative min-h-[280px] lg:min-h-0 bg-slate-100 dark:bg-slate-900">
                 <Image
                   src={model.floorPlan}
                   alt={`${model.name} floor plan`}
@@ -144,7 +149,7 @@ export function HouseModelsSection() {
                   className="object-cover"
                   sizes="(max-width: 1024px) 100vw, 50vw"
                 />
-                <div className="absolute top-3 left-3 bg-black/50 text-white text-xs font-semibold px-2.5 py-1 rounded-lg backdrop-blur-sm">
+                <div className="absolute top-4 left-4 bg-black/60 text-white text-xs font-semibold px-3 py-1.5 rounded-lg backdrop-blur-sm">
                   Floor Plan
                 </div>
               </div>
@@ -152,15 +157,15 @@ export function HouseModelsSection() {
           </div>
 
           {/* Photo Gallery */}
-          <div className="bg-white rounded-2xl border border-neutral-200 shadow-card p-8 md:p-10">
-            <h4 className="text-lg font-bold text-neutral-900 mb-6">Photo Gallery</h4>
+          <div className="bg-white dark:bg-surface-dark rounded-2xl border border-slate-200 dark:border-slate-800 shadow-card p-8 md:p-10">
+            <h4 className="text-lg font-bold text-slate-900 dark:text-white mb-6">Photo Gallery</h4>
             <ImageGallery images={model.images} alt={`${model.name} photos`} />
           </div>
 
           {/* Video Tour */}
-          <div className="bg-white rounded-2xl border border-neutral-200 shadow-card p-8 md:p-10">
-            <h4 className="text-lg font-bold text-neutral-900 mb-6">Video Tour</h4>
-            <div className="aspect-video rounded-xl overflow-hidden bg-neutral-100">
+          <div className="bg-white dark:bg-surface-dark rounded-2xl border border-slate-200 dark:border-slate-800 shadow-card p-8 md:p-10">
+            <h4 className="text-lg font-bold text-slate-900 dark:text-white mb-6">Video Tour</h4>
+            <div className="aspect-video rounded-xl overflow-hidden bg-slate-100 dark:bg-slate-900">
               <video
                 src={model.videoUrl}
                 controls

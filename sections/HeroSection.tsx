@@ -1,5 +1,6 @@
 'use client'
 
+import { IconPhone, IconPlayCircle } from '@/components/Icons'
 import { useEffect, useState } from 'react'
 
 export function HeroSection() {
@@ -66,7 +67,7 @@ export function HeroSection() {
                            hover:bg-primary-600 transition-all duration-300 shadow-lg shadow-primary-500/25
                            hover:shadow-xl hover:shadow-primary-500/30 hover:-translate-y-0.5"
               >
-                <span className="material-symbols-outlined transition-transform group-hover:scale-110" style={{ fontSize: '18px' }}>phone</span>
+                <IconPhone size={18} className="transition-transform group-hover:scale-110" />
                 Get a Free Quote
               </button>
               <button
@@ -76,7 +77,7 @@ export function HeroSection() {
                            hover:border-primary-400 hover:text-primary-600 dark:hover:border-primary-500 dark:hover:text-primary-400
                            font-bold text-sm transition-all duration-300 hover:-translate-y-0.5"
               >
-                <span className="material-symbols-outlined" style={{ fontSize: '18px' }}>play_circle</span>
+                <IconPlayCircle size={18} />
                 View Tour
               </button>
             </div>

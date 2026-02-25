@@ -28,14 +28,14 @@ const testimonials = [
 ]
 
 const avatarColors = [
-	'bg-primary-100 text-primary-700',
-	'bg-blue-100 text-blue-700',
-	'bg-emerald-100 text-emerald-700',
+	'bg-primary-100 dark:bg-primary-950/50 text-primary-700 dark:text-primary-400',
+	'bg-blue-100 dark:bg-blue-950/50 text-blue-700 dark:text-blue-400',
+	'bg-amber-100 dark:bg-amber-950/50 text-amber-700 dark:text-amber-400',
 ]
 
 export function TestimonialsSection() {
 	return (
-		<section id="testimonials" className="section bg-white">
+		<section id="testimonials" className="section bg-white dark:bg-surface-dark">
 			<div className="section-inner">
 				<div className="section-heading">
 					<span className="section-eyebrow">Social Proof</span>
@@ -47,9 +47,17 @@ export function TestimonialsSection() {
 
 				<div className="grid grid-cols-1 md:grid-cols-3 gap-6">
 					{testimonials.map((t, i) => (
-						<div key={t.id} className="card flex flex-col gap-4">
+						<div
+							key={t.id}
+							className="card flex flex-col gap-4 relative overflow-hidden"
+						>
+							{/* Decorative quote mark */}
+							<div className="absolute top-4 right-4 text-5xl font-serif text-primary-100 dark:text-primary-950/50 leading-none select-none">
+								"
+							</div>
+
 							{/* Stars */}
-							<div className="flex gap-0.5">
+							<div className="flex gap-0.5 relative z-10">
 								{Array.from({ length: t.rating }).map((_, s) => (
 									<svg
 										key={s}
@@ -62,22 +70,22 @@ export function TestimonialsSection() {
 							</div>
 
 							{/* Quote */}
-							<p className="text-sm text-neutral-600 leading-relaxed flex-1 italic">
-								"{t.text}"
+							<p className="text-sm text-slate-600 dark:text-slate-300 leading-relaxed flex-1 italic relative z-10">
+								&ldquo;{t.text}&rdquo;
 							</p>
 
 							{/* Author */}
-							<div className="flex items-center gap-3 pt-4 border-t border-neutral-100">
+							<div className="flex items-center gap-3 pt-4 border-t border-slate-100 dark:border-slate-800">
 								<div
 									className={`w-10 h-10 rounded-full flex items-center justify-center font-bold text-sm flex-shrink-0 ${avatarColors[i]}`}
 								>
 									{t.initials}
 								</div>
 								<div>
-									<p className="text-sm font-bold text-neutral-900">
+									<p className="text-sm font-bold text-slate-900 dark:text-white">
 										{t.name}
 									</p>
-									<p className="text-xs text-neutral-400">
+									<p className="text-xs text-slate-400 dark:text-slate-500">
 										{t.location}
 									</p>
 								</div>

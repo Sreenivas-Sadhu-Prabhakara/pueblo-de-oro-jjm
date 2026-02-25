@@ -1,6 +1,7 @@
 'use client'
 
 import { useEffect, useState } from 'react'
+import { IconClose, IconHomeWork, IconMail, IconMenu, IconMoon, IconSun } from './Icons'
 
 interface HeaderProps {
   isDark: boolean
@@ -71,7 +72,7 @@ export function Header({ isDark, onToggleDark }: HeaderProps) {
             onClick={(e) => { e.preventDefault(); scrollTo('hero') }}
           >
             <div className="w-9 h-9 rounded-xl bg-primary-500 flex items-center justify-center text-white shadow-md shadow-primary-500/30 group-hover:shadow-lg group-hover:shadow-primary-500/40 transition-all duration-300">
-              <span className="material-symbols-outlined" style={{ fontSize: '20px' }}>home_work</span>
+              <IconHomeWork size={20} />
             </div>
             <span className="font-bold text-lg text-slate-900 dark:text-white leading-tight tracking-tight">
               Pueblo <span className="text-primary-600 dark:text-primary-400">de Oro</span>
@@ -103,9 +104,7 @@ export function Header({ isDark, onToggleDark }: HeaderProps) {
               aria-label="Toggle dark mode"
               className="p-2.5 rounded-xl text-slate-500 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white hover:bg-slate-100 dark:hover:bg-slate-800/60 transition-all duration-200"
             >
-              <span className="material-symbols-outlined" style={{ fontSize: '20px' }}>
-                {isDark ? 'light_mode' : 'dark_mode'}
-              </span>
+              {isDark ? <IconSun size={20} /> : <IconMoon size={20} />}
             </button>
 
             {/* CTA */}
@@ -116,7 +115,7 @@ export function Header({ isDark, onToggleDark }: HeaderProps) {
                          hover:bg-primary-600 transition-all duration-200 shadow-md shadow-primary-500/25
                          hover:shadow-lg hover:shadow-primary-500/30"
             >
-              <span className="material-symbols-outlined" style={{ fontSize: '16px' }}>mail</span>
+              <IconMail size={16} />
               Get a Quote
             </button>
 
@@ -126,9 +125,7 @@ export function Header({ isDark, onToggleDark }: HeaderProps) {
               className="lg:hidden p-2.5 rounded-xl text-slate-600 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800/60 transition-all duration-200"
               aria-label="Toggle menu"
             >
-              <span className="material-symbols-outlined" style={{ fontSize: '22px' }}>
-                {menuOpen ? 'close' : 'menu'}
-              </span>
+              {menuOpen ? <IconClose size={22} /> : <IconMenu size={22} />}
             </button>
           </div>
         </div>

@@ -37,7 +37,7 @@ export function FAQSection() {
 	const [openIndex, setOpenIndex] = useState<number | null>(null)
 
 	return (
-		<section id="faq" className="section bg-neutral-50">
+		<section id="faq" className="section bg-slate-50 dark:bg-background-dark">
 			<div className="max-w-3xl mx-auto px-4">
 				<div className="section-heading">
 					<span className="section-eyebrow">Got Questions?</span>
@@ -48,46 +48,61 @@ export function FAQSection() {
 				</div>
 
 				<div className="space-y-3">
-					{faqs.map((faq, i) => (
-						<div
-							key={i}
-							className="bg-white rounded-2xl border border-neutral-200 shadow-card overflow-hidden"
-						>
-							<button
-								onClick={() =>
-									setOpenIndex(openIndex === i ? null : i)
-								}
-								className="w-full px-6 py-5 text-left flex items-center justify-between gap-4 hover:bg-neutral-50 transition-colors"
+					{faqs.map((faq, i) => {
+						const isOpen = openIndex === i
+						return (
+							<div
+								key={i}
+								className={`bg-white dark:bg-surface-dark rounded-2xl border transition-all duration-300 overflow-hidden ${
+									isOpen
+										? 'border-primary-300 dark:border-primary-800 shadow-md shadow-primary-500/5'
+										: 'border-slate-200 dark:border-slate-800 shadow-card'
+								}`}
 							>
-								<span className="text-sm font-semibold text-neutral-900">
-									{faq.question}
-								</span>
-								<span
-									className={`flex-shrink-0 w-6 h-6 rounded-full bg-primary-100 flex items-center justify-center transition-transform duration-200 ${
-										openIndex === i ? 'rotate-180' : ''
+								<button
+									onClick={() => setOpenIndex(isOpen ? null : i)}
+									className="w-full px-6 py-5 text-left flex items-center justify-between gap-4 hover:bg-slate-50 dark:hover:bg-slate-800/30 transition-colors"
+								>
+									<span className="text-sm font-semibold text-slate-900 dark:text-white">
+										{faq.question}
+									</span>
+									<span
+										className={`flex-shrink-0 w-7 h-7 rounded-full flex items-center justify-center transition-all duration-300 ${
+											isOpen
+												? 'bg-primary-500 rotate-180'
+												: 'bg-primary-100 dark:bg-primary-950/50'
+										}`}
+									>
+										<span
+											className={`material-symbols-outlined transition-colors ${
+												isOpen
+													? 'text-white'
+													: 'text-primary-600 dark:text-primary-400'
+											}`}
+											style={{ fontSize: '16px' }}
+										>
+											expand_more
+										</span>
+									</span>
+								</button>
+								<div
+									className={`overflow-hidden transition-all duration-300 ${
+										isOpen ? 'max-h-60 opacity-100' : 'max-h-0 opacity-0'
 									}`}
 								>
-									<span
-										className="material-symbols-outlined text-primary-600"
-										style={{ fontSize: '16px' }}
-									>
-										expand_more
-									</span>
-								</span>
-							</button>
-							{openIndex === i && (
-								<div className="px-6 pb-5 border-t border-neutral-100">
-									<p className="text-sm text-neutral-600 leading-relaxed pt-4">
-										{faq.answer}
-									</p>
+									<div className="px-6 pb-5 border-t border-slate-100 dark:border-slate-800">
+										<p className="text-sm text-slate-600 dark:text-slate-300 leading-relaxed pt-4">
+											{faq.answer}
+										</p>
+									</div>
 								</div>
-							)}
-						</div>
-					))}
+							</div>
+						)
+					})}
 				</div>
 
-				<div className="mt-10 text-center">
-					<p className="text-sm text-neutral-500 mb-4">
+				<div className="mt-12 text-center">
+					<p className="text-sm text-slate-500 dark:text-slate-400 mb-4">
 						Still have questions?
 					</p>
 					<a
@@ -98,12 +113,11 @@ export function FAQSection() {
 								.getElementById('contact')
 								?.scrollIntoView({ behavior: 'smooth' })
 						}}
-						className="inline-flex items-center gap-2 px-6 py-3 bg-primary-500 text-white font-semibold text-sm rounded-xl hover:bg-primary-600 transition-colors"
+						className="inline-flex items-center gap-2 px-6 py-3 bg-primary-500 text-white font-bold text-sm rounded-xl
+                       hover:bg-primary-600 transition-all duration-200 shadow-md shadow-primary-500/20
+                       hover:shadow-lg hover:shadow-primary-500/25"
 					>
-						<span
-							className="material-symbols-outlined"
-							style={{ fontSize: '18px' }}
-						>
+						<span className="material-symbols-outlined" style={{ fontSize: '18px' }}>
 							chat
 						</span>
 						Contact Our Sales Team
