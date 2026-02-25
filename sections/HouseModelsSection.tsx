@@ -27,12 +27,12 @@ const houseModels: HouseModel[] = [
     bedrooms: 3,
     bathrooms: 2,
     images: [
-      '/assets/pueblo-de-oro-living-room.jpg',
-      '/assets/pueblo-de-oro-kitchen.jpg',
-      '/assets/pueblo-de-oro-bedroom.jpg'
+      '/pueblo-de-oro-living-room.jpg',
+      '/pueblo-de-oro-kitchen.jpg',
+      '/pueblo-de-oro-bedroom.jpg'
     ],
-    floorPlan: '/assets/pueblo-de-oro-facade.jpg',
-    videoUrl: '/assets/pueblo-de-oro-video-tour.mp4',
+    floorPlan: '/pueblo-de-oro-facade.jpg',
+    videoUrl: '/pueblo-de-oro-video-tour.mp4',
     features: ['Spacious living area', 'Modern kitchen', 'Full bath on each floor', 'Backyard space', 'Laundry area']
   },
   {
@@ -44,12 +44,12 @@ const houseModels: HouseModel[] = [
     bedrooms: 4,
     bathrooms: 3,
     images: [
-      '/assets/pueblo-de-oro-bathroom.jpg',
-      '/assets/pueblo-de-oro-garden.jpg',
-      '/assets/pueblo-de-oro-exterior-1.jpg'
+      '/pueblo-de-oro-bathroom.jpg',
+      '/pueblo-de-oro-garden.jpg',
+      '/pueblo-de-oro-exterior-1.jpg'
     ],
-    floorPlan: '/assets/pueblo-de-oro-entrance.jpg',
-    videoUrl: '/assets/pueblo-de-oro-property-video.mp4',
+    floorPlan: '/pueblo-de-oro-entrance.jpg',
+    videoUrl: '/pueblo-de-oro-property-video.mp4',
     features: ['Master suite with walk-in closet', 'Island kitchen', 'Living and dining', 'Home office', 'Garage for 2 cars']
   }
 ]

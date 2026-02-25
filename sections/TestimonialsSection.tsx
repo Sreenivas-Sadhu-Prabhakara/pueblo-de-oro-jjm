@@ -16,7 +16,7 @@ const testimonials: Testimonial[] = [
     location: 'Cavite',
     rating: 5,
     text: 'Pueblo de Oro exceeded our expectations! The quality of construction and the community amenities are outstanding. Our new home feels like a dream come true.',
-    image: '/assets/pueblo-de-oro-exterior-1.jpg'
+    image: '/pueblo-de-oro-exterior-1.jpg'
   },
   {
     id: '2',
@@ -24,7 +24,7 @@ const testimonials: Testimonial[] = [
     location: 'Manila',
     rating: 5,
     text: 'The Pag-IBIG financing made homeownership possible for us. The staff was incredibly helpful throughout the process. Highly recommend!',
-    image: '/assets/pueblo-de-oro-living-room.jpg'
+    image: '/pueblo-de-oro-living-room.jpg'
   },
   {
     id: '3',
@@ -32,7 +32,7 @@ const testimonials: Testimonial[] = [
     location: 'Laguna',
     rating: 5,
     text: 'Beautiful homes with great attention to detail. The location is perfect - close to everything we need. Our family loves it here!',
-    image: '/assets/pueblo-de-oro-garden.jpg'
+    image: '/pueblo-de-oro-garden.jpg'
   }
 ]
 

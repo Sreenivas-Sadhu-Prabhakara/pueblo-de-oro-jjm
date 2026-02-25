@@ -8,7 +8,7 @@ export function HeroSection() {
       {/* Background Image with Overlay */}
       <div className="absolute inset-0 z-0">
         <Image
-          src="/assets/pueblo-de-oro-exterior-1.jpg"
+          src="/pueblo-de-oro-exterior-1.jpg"
           alt="Pueblo de Oro luxury residential community"
           fill
           className="object-cover"

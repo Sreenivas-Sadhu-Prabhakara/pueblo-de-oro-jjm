@@ -1,1 +1,29 @@
-[00:00:00.455] Server  LOG     ✓ Ready in 306ms
+[00:00:00.362] Server  LOG     ✓ Ready in 213ms
+[00:00:03.426] Server  WARN    Image with src "/assets/pueblo-de-oro-exterior-1.jpg" is using quality "85" which is not configured in images.qualities [75]. Please update your config to [75, 85].
+Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
+[00:00:04.215] Server  ERROR   ⨯ "The requested resource isn't a valid image for" "/assets/pueblo-de-oro-exterior-1.jpg" "received" null
+[00:00:04.527] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:00:04.527] Browser WARN    Image with src "/assets/pueblo-de-oro-exterior-1.jpg" is using quality "85" which is not configured in images.qualities [75]. Please update your config to [75, 85].
+Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
+[00:00:04.638] Browser WARN    Image with src "/assets/pueblo-de-oro-exterior-1.jpg" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
+[00:00:04.638] Browser WARN    Image with src "/assets/pueblo-de-oro-exterior-1.jpg" has "fill" and a height value of 0. This is likely because the parent element of the image has not been styled to have a set height.
+[00:00:04.987] Server  WARN    ⚠ Cross origin request detected from 100.100.103.107 to /_next/* resource. In a future major version of Next.js, you will need to explicitly configure "allowedDevOrigins" in next.config to allow this.
+Read more: https://nextjs.org/docs/app/api-reference/config/next-config-js/allowedDevOrigins
+[00:00:05.169] Server  ERROR   ⨯ "The requested resource isn't a valid image for" "/assets/pueblo-de-oro-exterior-1.jpg" "received" null
+[00:00:05.597] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:00:05.745] Browser WARN    Image with src "/assets/pueblo-de-oro-exterior-1.jpg" is using quality "85" which is not configured in images.qualities [75]. Please update your config to [75, 85].
+Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
+[00:00:05.745] Browser WARN    Image with src "/assets/pueblo-de-oro-exterior-1.jpg" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
+[00:00:05.745] Browser WARN    Image with src "/assets/pueblo-de-oro-exterior-1.jpg" has "fill" and a height value of 0. This is likely because the parent element of the image has not been styled to have a set height.
+[00:01:12.008] Server  LOG     ✓ Compiled in 22ms
+[00:01:12.103] Browser WARN    Image with src "/pueblo-de-oro-exterior-1.jpg" is using quality "85" which is not configured in images.qualities [75]. Please update your config to [75, 85].
+Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
+[00:01:12.166] Browser WARN    Image with src "/pueblo-de-oro-exterior-1.jpg" is using quality "85" which is not configured in images.qualities [75]. Please update your config to [75, 85].
+Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
+[00:01:12.278] Browser WARN    Image with src "/pueblo-de-oro-exterior-1.jpg" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
+[00:01:12.278] Browser WARN    Image with src "/pueblo-de-oro-exterior-1.jpg" has "fill" and a height value of 0. This is likely because the parent element of the image has not been styled to have a set height.
+[00:01:12.293] Browser WARN    Image with src "/pueblo-de-oro-exterior-1.jpg" has "fill" but is missing "sizes" prop. Please add it to improve page performance. Read more: https://nextjs.org/docs/api-reference/next/image#sizes
+[00:01:12.293] Browser WARN    Image with src "/pueblo-de-oro-exterior-1.jpg" has "fill" and a height value of 0. This is likely because the parent element of the image has not been styled to have a set height.
+[00:01:26.955] Server  LOG     ✓ Compiled in 15ms
+[00:01:42.156] Server  LOG     ✓ Compiled in 16ms
+[00:01:54.106] Server  LOG     ✓ Compiled in 18ms
